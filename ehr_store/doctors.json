@@ -1,0 +1,37 @@
+[
+  {
+    "id": "d1",
+    "first_name": "Sarah",
+    "last_name": "Johnson",
+    "specialization": "Internal Medicine",
+    "license_number": "MD-12345",
+
+    
+    "email": "sarah.johnson@hospital.com",
+    
+    "phone": "+1-555-200-1000",
+    "department": "General Medicine",
+    "years_of_experience": 15,
+    "education": "MD from Johns Hopkins University",
+    "office_location": "Building A, Room 301",
+    "available_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "created_at": "2020-01-15T08:00:00Z",
+    "updated_at": "2026-01-20T08:00:00Z"
+  },
+  {
+    "id": "d2",
+    "first_name": "Michael",
+    "last_name": "Chen",
+    "specialization": "Cardiology",
+    "license_number": "MD-67890",
+    "email": "michael.chen@hospital.com",
+    "phone": "+1-555-200-2000",
+    "department": "Cardiology",
+    "years_of_experience": 12,
+    "education": "MD from Harvard Medical School",
+    "office_location": "Building B, Room 205",
+    "available_days": ["Monday", "Wednesday", "Friday"],
+    "created_at": "2021-03-10T08:00:00Z",
+    "updated_at": "2026-01-20T08:00:00Z"
+  }
+]

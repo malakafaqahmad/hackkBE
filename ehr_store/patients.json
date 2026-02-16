@@ -1,0 +1,44 @@
+[
+  {
+    "id": "p1",
+    "first_name": "afaq",
+    "last_name": "ahmad",
+    "date_of_birth": "2002-11-6",
+    "gender": "M",
+    "contact_number": "+1-555-123-4567",
+    "email": "afaq.ahmad@example.com",
+    "address": "123 Main Street, Springfield, IL, USA",
+    "blood_type": "O+",
+    "emergency_contact": "+1-555-987-6543",
+    "created_at": "2026-01-28T08:00:00Z",
+    "updated_at": "2026-01-28T08:00:00Z"
+  },
+  {
+    "id": "p2",
+    "first_name": "lolly",
+    "last_name": "pop",
+    "date_of_birth": "1990-05-20",
+    "gender": "F",
+    "contact_number": "+1-555-123-4567",
+    "email": "lolly.pop@example.com",
+    "address": "456 Elm Street, Springfield, IL, USA",
+    "blood_type": "A+",
+    "emergency_contact": "+1-555-987-6543",
+    "created_at": "2026-01-28T08:00:00Z",
+    "updated_at": "2026-01-28T08:00:00Z"
+  },
+  {
+    "first_name": "pop",
+    "last_name": "lolly",
+    "date_of_birth": "1988-03-12",
+    "gender": "F",
+    "contact_number": "+1-555-999-8888",
+    "email": "pop.lolly@example.com",
+    "address": "789 Oak Avenue, Springfield, IL, USA",
+    "blood_type": "B+",
+    "emergency_contact": "+1-555-333-4444",
+    "id": "p3",
+    "created_at": "2026-02-03T08:22:10Z",
+    "updated_at": "2026-02-03T08:27:58Z"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "patient_id": "p1",
+    "name": "afaq ahmad",
+    "observations": [
+      {"id": "obs-001", "type": "Blood Pressure", "value": "118/76", "unit": "mmHg", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-002", "type": "Heart Rate", "value": "72", "unit": "bpm", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-003", "type": "Temperature", "value": "36.8", "unit": "°C", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-004", "type": "Respiratory Rate", "value": "16", "unit": "breaths/min", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-005", "type": "O2 Saturation", "value": "98", "unit": "%", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-006", "type": "Weight", "value": "75.3", "unit": "kg", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-007", "type": "Height", "value": "178", "unit": "cm", "recorded_at": "2026-02-03T08:00:00Z"},
+      {"id": "obs-008", "type": "BMI", "value": "23.8", "unit": "kg/m²", "recorded_at": "2026-02-03T08:00:00Z"}
+    ]
+  },
+  {
+    "patient_id": "p2",
+    "name": "lolly pop",
+    "observations": [
+      {"id": "obs-009", "type": "Blood Pressure", "value": "112/72", "unit": "mmHg", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-010", "type": "Heart Rate", "value": "68", "unit": "bpm", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-011", "type": "Temperature", "value": "36.6", "unit": "°C", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-012", "type": "Respiratory Rate", "value": "14", "unit": "breaths/min", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-013", "type": "O2 Saturation", "value": "99", "unit": "%", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-014", "type": "Weight", "value": "62.5", "unit": "kg", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-015", "type": "Height", "value": "165", "unit": "cm", "recorded_at": "2026-02-03T08:30:00Z"},
+      {"id": "obs-016", "type": "BMI", "value": "22.9", "unit": "kg/m²", "recorded_at": "2026-02-03T08:30:00Z"}
+    ]
+  },
+  {
+    "patient_id": "p3",
+    "name": "pop lolly",
+    "observations": [
+      {"id": "obs-017", "type": "Blood Pressure", "value": "125/82", "unit": "mmHg", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-018", "type": "Heart Rate", "value": "76", "unit": "bpm", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-019", "type": "Temperature", "value": "37.0", "unit": "°C", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-020", "type": "Respiratory Rate", "value": "18", "unit": "breaths/min", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-021", "type": "O2 Saturation", "value": "97", "unit": "%", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-022", "type": "Weight", "value": "68.2", "unit": "kg", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-023", "type": "Height", "value": "170", "unit": "cm", "recorded_at": "2026-02-03T09:00:00Z"},
+      {"id": "obs-024", "type": "BMI", "value": "23.6", "unit": "kg/m²", "recorded_at": "2026-02-03T09:00:00Z"}
+    ]
+  }
+]

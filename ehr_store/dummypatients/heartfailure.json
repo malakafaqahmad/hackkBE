@@ -1,0 +1,117 @@
+{
+  "patient_id": "HF001",
+  "first_name": "John",
+  "last_name": "Doe",
+  "age": 72,
+  "gender": "Male",
+  "date_of_birth": "1954-08-15",
+  "contact": {
+    "phone": "+1-555-987-6543",
+    "email": "john.doe@example.com",
+    "address": "123 Main St, Springfield, IL, USA"
+  },
+  "medical_history": [
+    "Hypertension",
+    "Coronary artery disease",
+    "Previous myocardial infarction",
+    "Chronic kidney disease stage 2"
+  ],
+  "medications": [
+    {
+      "name": "Furosemide",
+      "dose": "40mg",
+      "frequency": "once daily",
+      "route": "oral"
+    },
+    {
+      "name": "Metoprolol",
+      "dose": "50mg",
+      "frequency": "twice daily",
+      "route": "oral"
+    },
+    {
+      "name": "Aspirin",
+      "dose": "81mg",
+      "frequency": "once daily",
+      "route": "oral"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "20mg",
+      "frequency": "once daily",
+      "route": "oral"
+    }
+  ],
+  "allergies": [
+    {
+      "allergen": "Penicillin",
+      "reaction": "Rash"
+    }
+  ],
+  "vitals": {
+    "blood_pressure": "150/92 mmHg",
+    "heart_rate": 104,
+    "respiratory_rate": 22,
+    "oxygen_saturation": 91,
+    "temperature": "98.6 F",
+    "weight": "80 kg",
+    "height": "175 cm"
+  },
+  "symptoms": [
+    "Shortness of breath on exertion",
+    "Orthopnea (difficulty breathing when lying down)",
+    "Peripheral edema (leg swelling)",
+    "Fatigue"
+  ],
+  "physical_exam": [
+    "Bilateral lower extremity edema",
+    "Elevated jugular venous pressure",
+    "Crackles in lower lung fields",
+    "S3 gallop present"
+  ],
+  "lab_results": [
+    {
+      "test": "BNP",
+      "value": 780,
+      "unit": "pg/mL",
+      "reference_range": "<100"
+    },
+    {
+      "test": "Serum creatinine",
+      "value": 1.5,
+      "unit": "mg/dL",
+      "reference_range": "0.7-1.3"
+    },
+    {
+      "test": "Electrolytes",
+      "value": "Na 135, K 4.2, Cl 100",
+      "unit": "mmol/L"
+    }
+  ],
+  "imaging": [
+    {
+      "type": "Chest X-ray",
+      "findings": "Cardiomegaly, pulmonary congestion"
+    },
+    {
+      "type": "Echocardiogram",
+      "findings": "Reduced ejection fraction 35%, left ventricular dilation"
+    }
+  ],
+  "social_history": [
+    "Former smoker, quit 10 years ago",
+    "Moderate alcohol use",
+    "Lives with spouse"
+  ],
+  "family_history": [
+    "Father had coronary artery disease",
+    "Mother had hypertension"
+  ],
+  "recent_visits": [
+    {
+      "date": "2026-02-10",
+      "reason": "Shortness of breath",
+      "notes": "Patient reports increasing leg swelling and fatigue over past week."
+    }
+  ]
+}

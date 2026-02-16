@@ -1,0 +1,194 @@
+{
+  "J18": {
+    "icd10_code": "J18",
+    "disease_name": "Pneumonia, unspecified organism",
+    "category": "Respiratory",
+    "description": "Infection causing inflammation of air sacs in lungs.",
+    "symptoms": [
+      "cough",
+      "fever",
+      "productive sputum",
+      "shortness of breath",
+      "chest pain",
+      "fatigue"
+    ],
+    "physical_exam_findings": [
+      "crackles",
+      "reduced breath sounds",
+      "fever"
+    ],
+    "lab_findings": [
+      "elevated white blood cell count",
+      "elevated CRP"
+    ],
+    "imaging_findings": [
+      "lung consolidation",
+      "air bronchograms"
+    ],
+    "risk_factors": [
+      "smoking",
+      "elderly",
+      "immunocompromised",
+      "chronic disease"
+    ],
+    "recommended_tests": [
+      "Chest X-ray",
+      "CBC",
+      "Sputum culture",
+      "Blood culture"
+    ],
+    "embeddings_text": "Pneumonia with cough fever sputum crackles consolidation elevated WBC infection lungs"
+  },
+
+  "A15": {
+    "icd10_code": "A15",
+    "disease_name": "Pulmonary Tuberculosis",
+    "category": "Infectious Disease",
+    "description": "Chronic bacterial infection caused by Mycobacterium tuberculosis.",
+    "symptoms": [
+      "chronic cough",
+      "weight loss",
+      "night sweats",
+      "fever",
+      "hemoptysis",
+      "fatigue"
+    ],
+    "physical_exam_findings": [
+      "crackles",
+      "cachexia"
+    ],
+    "lab_findings": [
+      "positive sputum AFB",
+      "elevated ESR"
+    ],
+    "imaging_findings": [
+      "upper lobe cavitation",
+      "nodular infiltrates"
+    ],
+    "risk_factors": [
+      "crowded living conditions",
+      "HIV",
+      "immunosuppression",
+      "malnutrition"
+    ],
+    "recommended_tests": [
+      "Sputum AFB smear",
+      "GeneXpert",
+      "Chest X-ray",
+      "TB culture"
+    ],
+    "embeddings_text": "Tuberculosis chronic cough weight loss night sweats hemoptysis cavitation upper lobe infection"
+  },
+
+  "C34": {
+    "icd10_code": "C34",
+    "disease_name": "Malignant neoplasm of bronchus and lung",
+    "category": "Oncology",
+    "description": "Cancer originating in lung tissue.",
+    "symptoms": [
+      "chronic cough",
+      "hemoptysis",
+      "weight loss",
+      "chest pain",
+      "fatigue",
+      "shortness of breath"
+    ],
+    "physical_exam_findings": [
+      "reduced breath sounds",
+      "clubbing"
+    ],
+    "lab_findings": [
+      "anemia"
+    ],
+    "imaging_findings": [
+      "lung mass",
+      "nodules"
+    ],
+    "risk_factors": [
+      "smoking",
+      "asbestos exposure",
+      "age > 50"
+    ],
+    "recommended_tests": [
+      "CT scan",
+      "Biopsy",
+      "Chest X-ray",
+      "PET scan"
+    ],
+    "embeddings_text": "Lung cancer mass chronic cough hemoptysis smoking weight loss tumor bronchus malignancy"
+  },
+
+  "U07.1": {
+    "icd10_code": "U07.1",
+    "disease_name": "COVID-19",
+    "category": "Infectious Disease",
+    "description": "Respiratory illness caused by SARS-CoV-2 virus.",
+    "symptoms": [
+      "fever",
+      "dry cough",
+      "fatigue",
+      "loss of smell",
+      "shortness of breath"
+    ],
+    "physical_exam_findings": [
+      "hypoxia",
+      "tachypnea"
+    ],
+    "lab_findings": [
+      "lymphopenia",
+      "elevated CRP"
+    ],
+    "imaging_findings": [
+      "ground glass opacities",
+      "bilateral infiltrates"
+    ],
+    "risk_factors": [
+      "exposure",
+      "elderly",
+      "diabetes"
+    ],
+    "recommended_tests": [
+      "PCR test",
+      "Chest CT",
+      "Antigen test"
+    ],
+    "embeddings_text": "COVID fever cough loss smell ground glass opacities viral infection SARS-CoV-2"
+  },
+
+  "I50": {
+    "icd10_code": "I50",
+    "disease_name": "Heart Failure",
+    "category": "Cardiology",
+    "description": "Condition where heart cannot pump blood effectively.",
+    "symptoms": [
+      "shortness of breath",
+      "leg swelling",
+      "fatigue",
+      "orthopnea"
+    ],
+    "physical_exam_findings": [
+      "edema",
+      "elevated JVP",
+      "crackles"
+    ],
+    "lab_findings": [
+      "elevated BNP"
+    ],
+    "imaging_findings": [
+      "cardiomegaly",
+      "pulmonary edema"
+    ],
+    "risk_factors": [
+      "hypertension",
+      "coronary artery disease",
+      "previous MI"
+    ],
+    "recommended_tests": [
+      "Echocardiogram",
+      "BNP test",
+      "Chest X-ray",
+      "ECG"
+    ],
+    "embeddings_text": "Heart failure edema orthopnea cardiomegaly elevated BNP pulmonary edema dyspnea"
+  }
+}

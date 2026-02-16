@@ -1,0 +1,15 @@
+[
+  {
+  "id": "enc-001",
+  "patient_id": "p1",
+  "doctor_id": "d1",
+  "encounter_type": "Outpatient Consultation",
+  "encounter_date": "2026-01-28T10:00:00Z",
+  "reason_for_visit": "Routine checkup and follow-up on hypertension",
+  "diagnosis": ["Hypertension"],
+  "procedures": ["BP measurement", "Blood test"],
+  "notes": "Patient is stable, BP controlled with medication.",
+  "created_at": "2026-01-28T10:15:00Z",
+  "updated_at": "2026-01-28T10:15:00Z"
+  }
+]
