@@ -3,7 +3,7 @@ import json
 import os
 from typing import Optional, Dict, Any, List, Tuple
 
-base_url = "https://532c-121-52-146-240.ngrok-free.app"
+base_url = "https://9f86-34-91-37-241.ngrok-free.app"
 
 class MedGemmaClient:
     """
