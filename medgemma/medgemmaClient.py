@@ -92,10 +92,10 @@ class MedGemmaClient:
         )
 
         messages = [system_msg, user_msg]
-        print("\n" + "=" * 60)
-        print(f"Sending messages to /respond endpoint: {messages}")
-        print(f"📍 URL: {self.base_url}/respond")
-        print("=" * 60)
+        # print("\n" + "=" * 60)
+        # print(f"Sending messages to /respond endpoint: {messages}")
+        # print(f"📍 URL: {self.base_url}/respond")
+        # print("=" * 60)
 
         try:
             print("🔄 Sending request to medgemma server...")
@@ -173,10 +173,10 @@ class MedGemmaClient:
         if active_conversation_id:
             payload["conversation_id"] = active_conversation_id
         
-        print("\n" + "=" * 60)
-        print(f"\n📤 Sending chat message with payload: {payload}")
-        print(f"📍 URL: {self.base_url}/chat")
-        print("=" * 60)
+        # print("\n" + "=" * 60)
+        # print(f"\n📤 Sending chat message with payload: {payload}")
+        # print(f"📍 URL: {self.base_url}/chat")
+        # print("=" * 60)
 
         try:
             response = requests.post(

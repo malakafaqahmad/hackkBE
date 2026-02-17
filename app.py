@@ -93,8 +93,8 @@ def unified_chat():
             user_message=data.get('message')
         )
         
-        print(f"Result from orchestrator: {result}")
-        print("Returning response to client...")
+        # print(f"Result from orchestrator: {result}")
+        # print("Returning response to client...")
 
         return jsonify(result), 200
     
@@ -112,56 +112,6 @@ def unified_chat():
             'error': f'Unexpected error: {str(e)}',
             'success': False,
             'traceback': traceback.format_exc()
-        }), 500
-
-
-@app.route('/api/interview', methods=['POST'])
-def interview():
-    """
-    Handle interview messages - both starting and continuing the conversation
-    
-    Expected JSON body:
-    {
-        "patient_id": "p1",
-        "message": "I have chest pain" (optional - omit to start interview),
-        "conversation_history": [{"role": "assistant", "content": "..."}, {"role": "user", "content": "..."}] (optional),
-        "conversation_id": "abc123" (optional - for continuing conversation)
-    }
-    """
-    try:
-        from agents.sAgents.differentialdiagnosis.interviewer import interview_message
-        
-        data = request.get_json()
-        
-        if not data or 'patient_id' not in data:
-            return jsonify({
-                'error': 'Missing required field: patient_id'
-            }), 400
-        
-        patient_id = data['patient_id']
-        user_message = data.get('message', None)
-        conversation_history = data.get('conversation_history', [])
-        conversation_id = data.get('conversation_id', None)
-        report = data.get('current_report', None)
-        
-        # Convert conversation history from frontend format to tuple format
-        formatted_history = [(msg['role'], msg['content']) for msg in conversation_history] if conversation_history else []
-        
-        # Process the message (or start interview if no message)
-        result = interview_message(patient_id, user_message, formatted_history, conversation_id, report)
-        
-        return jsonify({
-            'success': True,
-            'patient_id': result['patient_id'],
-            'message': result['message'],
-            'updated_report': result['updated_report'],
-            'conversation_id': result['conversation_id']
-        }), 200
-        
-    except Exception as e:
-        return jsonify({
-            'error': str(e),
-            'success': False
         }), 500
 
 
@@ -183,6 +133,355 @@ def list_patients():
         return jsonify({
             'error': str(e),
             'success': False
+        }), 500
+
+
+@app.route('/api/exercise-plan', methods=['POST'])
+def generate_exercise_plan():
+    """
+    Generate personalized exercise plan for a patient
+    
+    Expected JSON body:
+    {
+        "patient_id": "p1",                    // Required: Patient's ID
+        "current_report": "...",               // Required: Current clinical report
+        "current_diet": "..."                  // Required: Current diet information
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "patient_id": "p1",
+        "exercise_plan": "Complete exercise prescription report..."
+    }
+    """
+    try:
+        print("\n" + "="*60)
+        print("📨 Received request to /api/exercise-plan")
+        print("="*60)
+        
+        from orchestrations.exercise_pipeline import exercisePipeline
+        
+        data = request.get_json()
+        print(f"📦 Request data: {data}")
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        # Validate required fields
+        patient_id = data.get('patient_id')
+        current_report = data.get('current_report')
+        current_diet = data.get('current_diet')
+        
+        if not patient_id:
+            return jsonify({
+                'error': 'patient_id is required',
+                'success': False
+            }), 400
+        
+        if not current_report:
+            return jsonify({
+                'error': 'current_report is required',
+                'success': False
+            }), 400
+        
+        if not current_diet:
+            return jsonify({
+                'error': 'current_diet is required',
+                'success': False
+            }), 400
+        
+        print(f"🏃 Generating exercise plan for patient: {patient_id}")
+        
+        # Generate exercise plan
+        exercise_plan = exercisePipeline(
+            patient_id=patient_id,
+            current_report=current_report,
+            current_diet=current_diet
+        )
+        
+        print("✅ Exercise plan generated successfully")
+        
+        return jsonify({
+            'success': True,
+            'patient_id': patient_id,
+            'exercise_plan': exercise_plan
+        }), 200
+    
+    except Exception as e:
+        print(f"❌ Error generating exercise plan: {str(e)}")
+        traceback.print_exc()
+        return jsonify({
+            'error': f'Failed to generate exercise plan: {str(e)}',
+            'success': False,
+            'traceback': traceback.format_exc()
+        }), 500
+
+
+@app.route('/api/diet-plan', methods=['POST'])
+def generate_diet_plan():
+    """
+    Generate personalized diet plan for a patient
+    
+    Expected JSON body:
+    {
+        "patient_id": "p1",                    // Required: Patient's ID
+        "current_report": "..."                // Required: Current clinical report
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "patient_id": "p1",
+        "diet_plan": "Complete diet plan report..."
+    }
+    """
+    try:
+        print("\n" + "="*60)
+        print("📨 Received request to /api/diet-plan")
+        print("="*60)
+        
+        from orchestrations.diet_Planner import dietPlanner
+        
+        data = request.get_json()
+        print(f"📦 Request data: {data}")
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        # Validate required fields
+        patient_id = data.get('patient_id')
+        current_report = data.get('current_report')
+        
+        if not patient_id:
+            return jsonify({
+                'error': 'patient_id is required',
+                'success': False
+            }), 400
+        
+        if not current_report:
+            return jsonify({
+                'error': 'current_report is required',
+                'success': False
+            }), 400
+        
+        print(f"🥗 Generating diet plan for patient: {patient_id}")
+        
+        # Generate diet plan
+        diet_plan = dietPlanner(
+            patient_id=patient_id,
+            current_report=current_report
+        )
+        
+        print("✅ Diet plan generated successfully")
+        
+        return jsonify({
+            'success': True,
+            'patient_id': patient_id,
+            'diet_plan': diet_plan
+        }), 200
+    
+    except Exception as e:
+        print(f"❌ Error generating diet plan: {str(e)}")
+        traceback.print_exc()
+        return jsonify({
+            'error': f'Failed to generate diet plan: {str(e)}',
+            'success': False,
+            'traceback': traceback.format_exc()
+        }), 500
+
+
+@app.route('/api/first-aid', methods=['POST'])
+def generate_first_aid():
+    """
+    Generate first aid emergency response for a patient
+    
+    Expected JSON body:
+    {
+        "patient_id": "p1",                    // Required: Patient's ID
+        "current_symptoms": "..."              // Required: Current emergency symptoms
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "patient_id": "p1",
+        "emergency_report": "Complete emergency response report..."
+    }
+    """
+    try:
+        print("\n" + "="*60)
+        print("📨 Received request to /api/first-aid")
+        print("="*60)
+        
+        from orchestrations.first_aid_pipeline import firstAidPipeline
+        
+        data = request.get_json()
+        print(f"📦 Request data: {data}")
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        # Validate required fields
+        patient_id = data.get('patient_id')
+        current_symptoms = data.get('current_symptoms')
+        
+        if not patient_id:
+            return jsonify({
+                'error': 'patient_id is required',
+                'success': False
+            }), 400
+        
+        if not current_symptoms:
+            return jsonify({
+                'error': 'current_symptoms is required',
+                'success': False
+            }), 400
+        
+        print(f"🚨 Generating first aid response for patient: {patient_id}")
+        
+        # Generate first aid response
+        emergency_report = firstAidPipeline(
+            patient_id=patient_id,
+            current_symptoms=current_symptoms
+        )
+        
+        print("✅ First aid report generated successfully")
+        
+        return jsonify({
+            'success': True,
+            'patient_id': patient_id,
+            'emergency_report': emergency_report
+        }), 200
+    
+    except Exception as e:
+        print(f"❌ Error generating first aid report: {str(e)}")
+        traceback.print_exc()
+        return jsonify({
+            'error': f'Failed to generate first aid report: {str(e)}',
+            'success': False,
+            'traceback': traceback.format_exc()
+        }), 500
+
+
+@app.route('/api/medicine-check', methods=['POST'])
+def check_medicine_safety():
+    """
+    Verify medication safety and check for contraindications
+    
+    Expected JSON body:
+    {
+        "patient_id": "p1",                    // Required: Patient's ID
+        "current_report": "...",               // Required: Current clinical report
+        "prescription_data": {                 // Required: Prescription information
+            "prescriber": "Dr. Smith",
+            "date": "2024-01-15",
+            "medications": [
+                {
+                    "name": "Metformin",
+                    "dose": "500mg",
+                    "frequency": "BID",
+                    "route": "PO",
+                    "indication": "Type 2 Diabetes"
+                }
+            ]
+        }
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "patient_id": "p1",
+        "safety_report": {
+            "patient_summary": "...",
+            "parsed_prescription": "...",
+            "contraindication": "...",
+            "interactions": "...",
+            "dose_check": "...",
+            "appropriateness": "...",
+            "risk_aggregation": "...",
+            "final_report": "..."
+        }
+    }
+    """
+    try:
+        print("\n" + "="*60)
+        print("📨 Received request to /api/medicine-check")
+        print("="*60)
+        
+        from orchestrations.medicine_double_check_pipeline import medicineDoubleCheckPipeline
+        from agents.sAgents.cache import get_ehr_summary
+        from agents.sAgents.differentialdiagnosis.ehrReport import ehr_summary_to_report
+        
+        data = request.get_json()
+        print(f"📦 Request data: {data}")
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        # Validate required fields
+        patient_id = data.get('patient_id')
+        current_report = data.get('current_report')
+        prescription_data = data.get('prescription_data')
+        
+        if not patient_id:
+            return jsonify({
+                'error': 'patient_id is required',
+                'success': False
+            }), 400
+        
+        if not current_report:
+            return jsonify({
+                'error': 'current_report is required',
+                'success': False
+            }), 400
+        
+        if not prescription_data:
+            return jsonify({
+                'error': 'prescription_data is required',
+                'success': False
+            }), 400
+        
+        print(f"💊 Checking medication safety for patient: {patient_id}")
+        
+        # Get EHR summary
+        ehr_summary = get_ehr_summary(patient_id, ehr_summary_to_report)
+        
+        # Perform medicine double check
+        safety_report = medicineDoubleCheckPipeline(
+            patient_id=patient_id,
+            ehr_summary=ehr_summary,
+            current_report=current_report,
+            prescription_data=prescription_data
+        )
+        
+        print("✅ Medicine safety check completed successfully")
+        
+        return jsonify({
+            'success': True,
+            'patient_id': patient_id,
+            'safety_report': safety_report
+        }), 200
+    
+    except Exception as e:
+        print(f"❌ Error checking medicine safety: {str(e)}")
+        traceback.print_exc()
+        return jsonify({
+            'error': f'Failed to check medicine safety: {str(e)}',
+            'success': False,
+            'traceback': traceback.format_exc()
         }), 500
 
 
@@ -208,195 +507,6 @@ def get_patient(patient_id):
         }), 500
 
 
-@app.route('/api/diagnosis', methods=['POST'])
-def generate_diagnosis():
-    """
-    Generate differential diagnosis based on patient report and conversation
-    
-    Expected JSON body:
-    {
-        "patient_id": "p1",
-        "conversation_history": [{"role": "assistant", "content": "..."}, {"role": "user", "content": "..."}],
-        "current_report": "# Medical Report..." (required)
-    }
-    """
-    try:
-        from agents.sAgents.differentialdiagnosis.ddGenerator import generate_differential_diagnosis
-        
-        data = request.get_json()
-        
-        if not data or 'patient_id' not in data or 'current_report' not in data:
-            return jsonify({
-                'error': 'Missing required fields: patient_id and current_report'
-            }), 400
-        
-        patient_id = data['patient_id']
-        current_report = data['current_report']
-        conversation_history = data.get('conversation_history', [])
-        
-        # Convert conversation history from frontend format to tuple format
-        formatted_history = [(msg['role'], msg['content']) for msg in conversation_history] if conversation_history else []
-        
-        # Generate differential diagnosis
-        result = generate_differential_diagnosis(patient_id, formatted_history, current_report)
-        print("Generated differential diagnosis:", result)
-        
-        return jsonify({
-            'success': True,
-            'patient_id': result['patient_id'],
-            'differential_diagnoses': result,
-            'raw_response': result.get('raw_response', '')
-        }), 200
-        
-    except Exception as e:
-        return jsonify({
-            'error': str(e),
-            'success': False
-        }), 500
-
-
-@app.route('/api/second-interview', methods=['POST'])
-def second_interview():
-    """
-    Handle second interview messages - focused follow-up based on differential diagnosis
-    
-    Expected JSON body:
-    {
-        "patient_id": "p1",
-        "message": "Yes, it gets worse when I lie down" (optional - omit to start),
-        "conversation_history": [{"role": "assistant", "content": "..."}, {"role": "user", "content": "..."}] (optional),
-        "current_report": "# Medical Report..." (required),
-        "differential_diagnoses": "[{...}]" (required),
-        "conversation_id": "abc123" (optional)
-    }
-    """
-    try:
-        from agents.sAgents.differentialdiagnosis.secondinterviewer import second_interview_message
-        
-        data = request.get_json()
-        
-        if not data or 'patient_id' not in data or 'current_report' not in data or 'differential_diagnoses' not in data:
-            return jsonify({
-                'error': 'Missing required fields: patient_id, current_report, and differential_diagnoses'
-            }), 400
-        
-        patient_id = data['patient_id']
-        user_message = data.get('message', None)
-        conversation_history = data.get('conversation_history', [])
-        current_report = data['current_report']
-        differential_diagnoses = data['differential_diagnoses']
-        conversation_id = data.get('conversation_id', None)
-        print("Received second interview request with data:", conversation_id)
-        
-        # Convert conversation history from frontend format to tuple format
-        formatted_history = [(msg['role'], msg['content']) for msg in conversation_history] if conversation_history else []
-        
-        # Process the message (or start second interview if no message)
-        result = second_interview_message(
-            patient_id,
-            user_message,
-            formatted_history,
-            current_report,
-            differential_diagnoses,
-            conversation_id
-        )
-        print("the updated differential diagnosis after second interview:", result['updated_differential'])
-        
-        return jsonify({
-            'success': True,
-            'patient_id': result['patient_id'],
-            'message': result['message'],
-            'updated_report': result['updated_report'],
-            'updated_differential': result['updated_differential'],
-            'conversation_id': result['conversation_id']
-        }), 200
-        
-    except Exception as e:
-        return jsonify({
-            'error': str(e),
-            'success': False
-        }), 500
-
-
-@app.route('/api/final-report', methods=['POST'])
-def generate_final_report():
-    """
-    Generate comprehensive final medical report
-    
-    Expected JSON body:
-    {
-        "patient_id": "p1",
-        "conversation_history": "Complete conversation transcript...",
-        "current_report": "# Medical Report..." (required),
-        "differential_diagnoses": "[{...}]" or "Diagnosis text..." (required)
-    }
-    """
-    try:
-        from agents.sAgents.differentialdiagnosis.finalReporter import finalReporter
-        
-        data = request.get_json()
-        
-        # Validate required fields
-        if not data:
-            return jsonify({
-                'error': 'No data provided',
-                'success': False
-            }), 400
-            
-        if 'patient_id' not in data:
-            return jsonify({
-                'error': 'Missing required field: patient_id',
-                'success': False
-            }), 400
-            
-        if 'current_report' not in data:
-            return jsonify({
-                'error': 'Missing required field: current_report',
-                'success': False
-            }), 400
-            
-        if 'differential_diagnoses' not in data:
-            return jsonify({
-                'error': 'Missing required field: differential_diagnoses',
-                'success': False
-            }), 400
-        
-        patient_id = data['patient_id']
-        conversation_history = data.get('conversation_history', '')
-        current_report = data['current_report']
-        differential_diagnoses = data['differential_diagnoses']
-
-        print("Received final report generation request with conversation:", conversation_history)
-        print("Current report:", current_report)
-        print("Differential diagnoses:", differential_diagnoses)
-        
-        # Convert differential_diagnoses to string if it's a dict/list
-        if isinstance(differential_diagnoses, (dict, list)):
-            import json
-            differential_diagnoses = json.dumps(differential_diagnoses, indent=2)
-        
-        print('final report generating')
-        
-        # Generate final report
-        result = finalReporter(
-            patient_id=patient_id,
-            conversation_history=conversation_history,
-            current_report=current_report,
-            differential_diagnoses=differential_diagnoses
-        )
-        print("Generated final report:", result)
-        
-        # Return the result (already structured by finalReporter)
-        if result.get('success'):
-            return jsonify(result), 200
-        else:
-            return jsonify(result), 500
-        
-    except Exception as e:
-        return jsonify({
-            'error': f'Unexpected error: {str(e)}',
-            'success': False
-        }), 500
 
 
 if __name__ == '__main__':

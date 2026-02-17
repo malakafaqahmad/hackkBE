@@ -521,4 +521,6 @@ class UnifiedChatOrchestrator:
         print(f"UNIFIED CHAT - Phase: {phase}, Message: {user_message}")
         print(f"Conversation ID: {conversation_id}")
         print(f"Message Counts: {message_counts}")
+        print("conversation history is as follows: ")
+        print(self.session_manager.get_session(conversation_id)['conversation_history'])
         print(f"{'='*60}\n")
