@@ -88,6 +88,7 @@ def interview_message(patient_id: str, user_message: str = None, conversation_hi
     # Initialize client
     client = MedGemmaClient(system_prompt=system_prompt)
     
+    
     # If no user message, start the interview
     if user_message is None:
         initial_response = client.chat("Hello, I need medical consultation.", conversation_id=conversation_id)

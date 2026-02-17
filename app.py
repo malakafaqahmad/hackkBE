@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
 from pathlib import Path
+import json
+import traceback
 
 # Add paths for imports
 _module_dir = Path(__file__).parent
@@ -11,7 +13,6 @@ if str(_module_dir) not in sys.path:
     sys.path.insert(0, str(_module_dir))
 if str(_manageEhr_dir) not in sys.path:
     sys.path.insert(0, str(_manageEhr_dir))
-
 
 app = Flask(__name__)
 CORS(app) 
@@ -24,6 +25,94 @@ def health_check():
         'status': 'healthy',
         'service': 'Differential Diagnosis API'
     }), 200
+
+
+@app.route('/api/chat', methods=['POST'])
+def unified_chat():
+    """
+    Unified chat endpoint that handles the entire diagnostic workflow:
+    - Phase 1: Initial interview (messages 1-10)
+    - Phase 2: Diagnosis generation (automatic after message 10)
+    - Phase 3: Second interview (messages 11-20)
+    - Phase 4: Final report generation (automatic after message 20)
+    
+    Expected JSON body:
+    {
+        "patient_id": "p1",                    // Required for new session
+        "message": "I have chest pain",        // Optional: User's message (null to start/continue)
+        "conversation_id": "uuid-string"       // Optional: For continuing existing conversation
+        "conversation_history": list          // Optional: Full conversation history for context
+    }
+    
+    Returns:
+    {
+        "success": true,
+        "conversation_id": "uuid-123",
+        "patient_id": "p1",
+        "phase": "initial_interview",
+        "progress": {
+            "current_phase_message_count": 5,
+            "total_messages": 5,
+            "phase_message_limit": 10,
+            "is_phase_complete": false
+        },
+        "message": "Can you describe your chest pain?",
+        "message_type": "question",
+        "updated_report": "# Medical Report\\n...",
+        "differential_diagnoses": null,
+        "final_report": null,
+        "expects_user_input": true,
+        "phase_transition": false,
+        "next_action": "continue_chat"
+    }
+    """
+    try:
+        print("\n" + "="*60)
+        print("📨 Received request to /api/chat")
+        print("="*60)
+        
+        from orchestrations.unified_chat_orchestrator import UnifiedChatOrchestrator
+        
+        data = request.get_json()
+        print(f"📦 Request data: {data}")
+        
+        if not data:
+            return jsonify({
+                'error': 'No data provided',
+                'success': False
+            }), 400
+        
+        # Initialize orchestrator and process request
+        orchestrator = UnifiedChatOrchestrator()
+        print("Processing chat message through orchestrator...")
+        print(f"Input to orchestrator: conversation_id={data.get('conversation_id')}, patient_id={data.get('patient_id')}, message={data.get('message')}")
+        
+        result = orchestrator.process_message(
+            conversation_id=data.get('conversation_id'),
+            patient_id=data.get('patient_id'),
+            user_message=data.get('message')
+        )
+        
+        print(f"Result from orchestrator: {result}")
+        print("Returning response to client...")
+
+        return jsonify(result), 200
+    
+    except ValueError as ve:
+        # Handle validation errors (missing patient_id, session not found, etc.)
+        return jsonify({
+            'error': str(ve),
+            'success': False
+        }), 400 if 'required' in str(ve).lower() else 404
+    
+    except Exception as e:
+        print(f"❌ Unexpected error in unified_chat: {str(e)}")
+        traceback.print_exc()
+        return jsonify({
+            'error': f'Unexpected error: {str(e)}',
+            'success': False,
+            'traceback': traceback.format_exc()
+        }), 500
 
 
 @app.route('/api/interview', methods=['POST'])

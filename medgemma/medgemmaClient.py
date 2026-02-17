@@ -3,7 +3,7 @@ import json
 import os
 from typing import Optional, Dict, Any, List, Tuple
 
-base_url = "https://9f86-34-91-37-241.ngrok-free.app"
+base_url = "http://127.0.0.1:8000"
 
 class MedGemmaClient:
     """
@@ -92,15 +92,28 @@ class MedGemmaClient:
         )
 
         messages = [system_msg, user_msg]
+        print("\n" + "=" * 60)
+        print(f"Sending messages to /respond endpoint: {messages}")
+        print(f"📍 URL: {self.base_url}/respond")
+        print("=" * 60)
 
         try:
+            print("🔄 Sending request to medgemma server...")
             response = requests.post(
                 f"{self.base_url}/respond",
                 data={
                     "messages": json.dumps(messages)
                 },
-                files=files
+                files=files,
+                timeout=100
             )
+            print(f"✅ Received response: {response.status_code}")
+        except requests.exceptions.Timeout:
+            print("❌ Request timed out after 100 seconds")
+            raise RuntimeError(f"Medgemma server timed out. URL: {self.base_url}/respond")
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Request failed: {str(e)}")
+            raise RuntimeError(f"Failed to connect to medgemma server: {str(e)}")
         finally:
             if files:
                 files[0][1][1].close()
@@ -160,15 +173,16 @@ class MedGemmaClient:
         if active_conversation_id:
             payload["conversation_id"] = active_conversation_id
         
-        # print("\n" + "=" * 60)
-        # print(f"\n📤 Sending chat message with payload: {payload}")
-        # print("=" * 60)
+        print("\n" + "=" * 60)
+        print(f"\n📤 Sending chat message with payload: {payload}")
+        print(f"📍 URL: {self.base_url}/chat")
+        print("=" * 60)
 
         try:
             response = requests.post(
                 f"{self.base_url}/chat",
                 data=payload,
-                files=files
+                files=files,
             )
         finally:
             if files:

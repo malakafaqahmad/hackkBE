@@ -30,6 +30,7 @@ def ehr_summary_to_report(id: str) -> str:
 
     # Combine into full name
     full_name = f"{first_name} {last_name}"
+    print(f"Retrieved EHR data for patient: {full_name} (ID: {id})")
  
 
     prompt = f"""
@@ -50,6 +51,7 @@ def ehr_summary_to_report(id: str) -> str:
         """
     
     cleint = MedGemmaClient(prompt)
+    print("Generating EHR summary report using MedGemma...")
     patientdata = cleint.respond(patientdata)
-
+    print("EHR summary report generated.")
     return patientdata
