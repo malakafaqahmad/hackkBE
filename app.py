@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 import json
 import traceback
+from agents.sAgents.pdfreader import PDFReader
 
 # Add paths for imports
 _module_dir = Path(__file__).parent
@@ -15,7 +16,10 @@ if str(_manageEhr_dir) not in sys.path:
     sys.path.insert(0, str(_manageEhr_dir))
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
+
+# Initialize PDF Reader
+pdf_reader = PDFReader() 
 
 
 @app.route('/api/health', methods=['GET'])
@@ -25,6 +29,21 @@ def health_check():
         'status': 'healthy',
         'service': 'Differential Diagnosis API'
     }), 200
+
+@app.route("/pdf-reader", methods=["POST"])
+def read_pdf():
+
+    if "file" not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+
+    file = request.files["file"]
+
+    extracted_text = pdf_reader.read(file)
+
+    return jsonify({
+        "status": "success",
+        "text": extracted_text
+    })
 
 
 @app.route('/api/chat', methods=['POST'])
