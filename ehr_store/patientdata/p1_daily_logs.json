@@ -1,0 +1,406 @@
+[
+    {
+        "day": 1,
+        "diet": {
+            "morning": [
+                "vegetables",
+                "fish"
+            ],
+            "lunch": [
+                "toast",
+                "oatmeal"
+            ],
+            "dinner": [
+                "egg",
+                "pasta"
+            ]
+        },
+        "exercise_minutes": 34,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 144.0,
+            "DBP": 95.0,
+            "HR": 91.0,
+            "O2_saturation": 95.0,
+            "temperature": 36.9
+        },
+        "labs": {
+            "weight_kg": 75.8,
+            "Hb": 12.3,
+            "fasting_glucose": 96.0
+        },
+        "symptoms": []
+    },
+    {
+        "day": 2,
+        "diet": {
+            "morning": [
+                "vegetables",
+                "pasta"
+            ],
+            "lunch": [
+                "oatmeal",
+                "rice"
+            ],
+            "dinner": [
+                "rice",
+                "banana"
+            ]
+        },
+        "exercise_minutes": 39,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 142.0,
+            "DBP": 92.0,
+            "HR": 92.0,
+            "O2_saturation": 95.0,
+            "temperature": 37.0
+        },
+        "labs": {},
+        "symptoms": []
+    },
+    {
+        "day": 3,
+        "diet": {
+            "morning": [
+                "fish",
+                "toast"
+            ],
+            "lunch": [
+                "oatmeal",
+                "vegetables"
+            ],
+            "dinner": [
+                "rice",
+                "pasta"
+            ]
+        },
+        "exercise_minutes": 15,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 0
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 143.0,
+            "DBP": 96.0,
+            "HR": 88.0,
+            "O2_saturation": 95.0,
+            "temperature": 36.8
+        },
+        "labs": {},
+        "symptoms": []
+    },
+    {
+        "day": 4,
+        "diet": {
+            "morning": [
+                "egg",
+                "chicken_salad"
+            ],
+            "lunch": [
+                "pasta",
+                "toast"
+            ],
+            "dinner": [
+                "chicken_salad",
+                "toast"
+            ]
+        },
+        "exercise_minutes": 28,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 0
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 147.0,
+            "DBP": 92.0,
+            "HR": 88.0,
+            "O2_saturation": 94.0,
+            "temperature": 36.7
+        },
+        "labs": {
+            "weight_kg": 76.1,
+            "Hb": 12.6,
+            "fasting_glucose": 110.0
+        },
+        "symptoms": []
+    },
+    {
+        "day": 5,
+        "diet": {
+            "morning": [
+                "oatmeal",
+                "fish"
+            ],
+            "lunch": [
+                "chicken_salad",
+                "vegetables"
+            ],
+            "dinner": [
+                "banana",
+                "oatmeal"
+            ]
+        },
+        "exercise_minutes": 28,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 144.0,
+            "DBP": 92.0,
+            "HR": 85.0,
+            "O2_saturation": 94.0,
+            "temperature": 37.0
+        },
+        "labs": {},
+        "symptoms": []
+    },
+    {
+        "day": 6,
+        "diet": {
+            "morning": [
+                "vegetables",
+                "fish"
+            ],
+            "lunch": [
+                "banana",
+                "egg"
+            ],
+            "dinner": [
+                "chicken_salad",
+                "oatmeal"
+            ]
+        },
+        "exercise_minutes": 35,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 0
+            }
+        ],
+        "vitals": {
+            "SBP": 147.0,
+            "DBP": 93.0,
+            "HR": 87.0,
+            "O2_saturation": 96.0,
+            "temperature": 37.2
+        },
+        "labs": {},
+        "symptoms": []
+    },
+    {
+        "day": 7,
+        "diet": {
+            "morning": [
+                "chicken_salad",
+                "fish"
+            ],
+            "lunch": [
+                "fish",
+                "egg"
+            ],
+            "dinner": [
+                "oatmeal",
+                "chicken_salad"
+            ]
+        },
+        "exercise_minutes": 25,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 144.0,
+            "DBP": 96.0,
+            "HR": 88.0,
+            "O2_saturation": 94.0,
+            "temperature": 37.0
+        },
+        "labs": {},
+        "symptoms": []
+    },
+    {
+        "day": 8,
+        "diet": {
+            "morning": [
+                "rice",
+                "toast"
+            ],
+            "lunch": [
+                "oatmeal",
+                "pasta"
+            ],
+            "dinner": [
+                "egg",
+                "toast"
+            ]
+        },
+        "exercise_minutes": 34,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 144,
+            "DBP": 95,
+            "HR": 91,
+            "O2_saturation": 95,
+            "temperature": 36.9
+        },
+        "labs": {},
+        "symptoms": []
+    },
+    {
+        "day": 9,
+        "diet": {
+            "morning": [
+                "rice",
+                "fish"
+            ],
+            "lunch": [
+                "vegetables",
+                "egg"
+            ],
+            "dinner": [
+                "banana",
+                "toast"
+            ]
+        },
+        "exercise_minutes": 34,
+        "medications_taken": [
+            {
+                "name": "amlodipine",
+                "dose_mg": 5,
+                "taken_times": 1
+            },
+            {
+                "name": "metformin",
+                "dose_mg": 500,
+                "taken_times": 1
+            },
+            {
+                "name": "atorvastatin",
+                "dose_mg": 20,
+                "taken_times": 1
+            }
+        ],
+        "vitals": {
+            "SBP": 144,
+            "DBP": 95,
+            "HR": 91,
+            "O2_saturation": 95,
+            "temperature": 36.9
+        },
+        "labs": {},
+        "symptoms": []
+    }
+]

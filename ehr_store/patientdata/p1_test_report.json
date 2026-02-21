@@ -1,0 +1,8 @@
+{
+  "diagnosis": "Test diagnosis",
+  "medications": [
+    "med1",
+    "med2"
+  ],
+  "last_updated": "2026-02-22"
+}

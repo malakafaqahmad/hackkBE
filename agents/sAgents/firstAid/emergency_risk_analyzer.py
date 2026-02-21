@@ -7,6 +7,8 @@ def emergencyRiskAnalyzer(patient_id, ehr_summary, current_symptoms):
     Analyzes patient EHR to detect immediate emergency risks.
     Evaluates vital signs, symptoms, medical history, and medications.
     """
+
+    current_report = 'current reprt'
     
     system_prompt = """
 <Role>
@@ -152,6 +154,9 @@ EHR Summary:
 
 Current Symptoms/Presentation:
 {current_symptoms}
+
+current Report:
+{current_report}
 
 Provide comprehensive emergency risk assessment following the specified JSON schema.
 """

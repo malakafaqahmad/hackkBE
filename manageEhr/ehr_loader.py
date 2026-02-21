@@ -221,8 +221,9 @@ class EHRLoader:
         if patient_id:
             return [o for o in observations if o['patient_id'] == patient_id]
         
-        return observations
+        return observations       
     
+             
     def load_patient_complete_record(self, patient_id: str) -> Dict[str, Any]:
         """
         Load complete medical record for a patient.

@@ -241,6 +241,9 @@ class MedGemmaClient:
         # print("=" * 60)
         print("files received in client: ", user_msg)
 
+        if image_object is not None:
+            print("Image object provided, size in bytes:", len(image_object) if isinstance(image_object, bytes) else "N/A")
+
         try:
             print("🔄 Sending request to medgemma server...")
             response = requests.post(
@@ -249,7 +252,7 @@ class MedGemmaClient:
                     "messages": json.dumps(messages)
                 },
                 files=files,
-                timeout=100
+                timeout=1008
             )
             print(f"✅ Received response: {response.status_code}")
         except requests.exceptions.Timeout:
