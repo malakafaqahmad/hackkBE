@@ -2,16 +2,15 @@ from medgemma.medgemmaClient import MedGemmaClient
 import json
 
 
-def lifestyleEvalAgent(patient_id: str, patientcontext: dict, dailylogs: dict, weeklylogs: dict, monthlylogs: dict):
+def lifestyleEvalAgent(patient_id: str, patientcontext, monthlylogs, patient_report):
     """
     Lifestyle Evaluation Agent - Comprehensive analysis of lifestyle factors and behaviors.
     
     Args:
         patient_id: Patient identifier
         patientcontext: Patient context including conditions and risk factors
-        dailylogs: Recent daily logs
-        weeklylogs: Weekly summary
-        monthlylogs: Monthly summary
+        monthlylogs: Monthly summary of logs
+        patient_report: Patient report generated from previous stages
     
     Returns:
         dict: Lifestyle assessment with risk factors and behavior change opportunities
@@ -167,14 +166,11 @@ CONDITION-SPECIFIC CONSIDERATIONS:
 PATIENT CONTEXT:
 {json.dumps(patientcontext, indent=2)}
 
-DAILY LOGS:
-{json.dumps(dailylogs, indent=2)}
-
-WEEKLY LOGS:
-{json.dumps(weeklylogs, indent=2)}
-
 MONTHLY LOGS:
 {json.dumps(monthlylogs, indent=2)}
+
+PATIENT REPORT:
+{patient_report}
 
 Provide comprehensive lifestyle evaluation as specified."""
 

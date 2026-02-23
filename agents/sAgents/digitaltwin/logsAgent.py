@@ -126,7 +126,7 @@ Provide comprehensive daily analysis as specified."""
     return response
 
 
-def weeklylogsAgent(patient_id: str, patientcontext: dict, weeklylogs: list, previousweeklylogs: list):
+def weeklylogsAgent(patient_id: str, patientcontext: dict, weeklylogs: list):
     """
     Weekly Logs Agent - Analyzes trends and patterns over a week.
     
@@ -231,9 +231,6 @@ PATIENT CONTEXT:
 CURRENT WEEK LOGS (7 days):
 {json.dumps(weeklylogs, indent=2)}
 
-PREVIOUS WEEK LOGS (for comparison):
-{json.dumps(previousweeklylogs, indent=2)}
-
 Provide comprehensive weekly trend analysis as specified."""
 
     client = MedGemmaClient(system_prompt)
@@ -243,7 +240,7 @@ Provide comprehensive weekly trend analysis as specified."""
 
 
 
-def monthlylogsAgent(patient_id: str, patientcontext: dict, monthlylogs: list, previousmonthlylogs: list):
+def monthlylogsAgent(patient_id: str, patientcontext: dict, monthlylogs: list):
     """
     Monthly Logs Agent - Analyzes long-term trends and patterns over a month.
     
@@ -357,7 +354,9 @@ ANALYSIS GUIDELINES:
 5. Evaluate quality of life impact
 6. Consider seasonal or cyclical factors
 7. Provide strategic, actionable insights
-8. Compare to previous month for trajectory assessment
+
+you must not include any explanatory text, only return the valid JSON object as specified
+you must not add facts that are not present in the logs, only analyze the data given and return insights based on that data
 """
 
     user_prompt = f"""Analyze monthly health trajectory for patient {patient_id}:
@@ -367,9 +366,6 @@ PATIENT CONTEXT:
 
 CURRENT MONTH LOGS (~30 days):
 {json.dumps(monthlylogs, indent=2)}
-
-PREVIOUS MONTH LOGS (for comparison):
-{json.dumps(previousmonthlylogs, indent=2)}
 
 Provide comprehensive monthly longitudinal analysis as specified."""
 

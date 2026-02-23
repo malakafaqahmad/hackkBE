@@ -1,4 +1,6 @@
 from medgemma.medgemmaClient import MedGemmaClient
+import base64
+import io
 
 
 def imagesHandler(patientid, images, report):
@@ -39,13 +41,44 @@ OUTPUT FORMAT (Valid JSON only):
 }
 """
 
+    # Prepare image metadata for context (without base64 data)
+    image_metadata = []
+    for img in images:
+        metadata = {
+            'filename': img.get('filename', 'unknown'),
+            'type': img.get('type', 'image'),
+            'format': img.get('format', 'unknown')
+        }
+        if 'dimensions' in img:
+            metadata['dimensions'] = img['dimensions']
+        image_metadata.append(metadata)
+
     user_prompt = f"""Patient ID: {patientid}
-Images: {images} 
+Number of Images: {len(images)}
+Image Metadata: {image_metadata}
 Current Report: {report}
-    analyze the provided images in the context of the patient and return a structured analysis as specified in the system prompt.
-    """
+
+Analyze the provided medical image(s) in the context of the patient's current report and return a structured analysis as specified in the system prompt.
+"""
 
     client = MedGemmaClient(system_prompt)
-    response = client.respond(user_prompt)
+    
+    # Process images - handle multiple images by analyzing first one (or combine if needed)
+    # For now, analyze the first image
+    if images and len(images) > 0:
+        first_image = images[0]
+        
+        # Decode base64 image data
+        if 'data' in first_image:
+            try:
+                image_bytes = base64.b64decode(first_image['data'])
+                response = client.respond(user_prompt, image_object=image_bytes)
+            except Exception as e:
+                print(f"Error decoding image: {e}")
+                response = client.respond(user_prompt)
+        else:
+            response = client.respond(user_prompt)
+    else:
+        response = client.respond(user_prompt)
 
     return response

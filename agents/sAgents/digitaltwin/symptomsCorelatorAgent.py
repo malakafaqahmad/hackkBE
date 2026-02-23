@@ -2,16 +2,16 @@ from medgemma.medgemmaClient import MedGemmaClient
 import json
 
 
-def symptomsCorelatorAgent(patient_id: str, patientcontext: dict, dailylogs: dict, weeklylogs: dict, monthlylogs: dict):
+def symptomsCorelatorAgent(patient_id: str, patientcontext, weeklylogs, patient_report, weekly_memory_profile):
     """
     Symptoms Correlator Agent - Advanced symptom pattern recognition and correlation analysis.
     
     Args:
         patient_id: Patient identifier
         patientcontext: Patient context including conditions and medications
-        dailylogs: Recent daily logs
         weeklylogs: Weekly summary
-        monthlylogs: Monthly summary
+        patient_report: Patient report generated from previous stages
+        weekly_memory_profile: Weekly memory profile
     
     Returns:
         dict: Symptom correlation analysis with patterns and clinical interpretation
@@ -204,14 +204,14 @@ MEDICATION SIDE EFFECT CONSIDERATIONS:
 PATIENT CONTEXT (conditions, medications, allergies):
 {json.dumps(patientcontext, indent=2)}
 
-DAILY LOGS:
-{json.dumps(dailylogs, indent=2)}
-
 WEEKLY LOGS:
 {json.dumps(weeklylogs, indent=2)}
 
-MONTHLY LOGS:
-{json.dumps(monthlylogs, indent=2)}
+patient_report:
+{patient_report}
+
+WEEKLY MEMORY PROFILE:
+{json.dumps(weekly_memory_profile, indent=2)}
 
 Provide comprehensive symptom correlation analysis as specified."""
 

@@ -1,45 +1,4 @@
-"""
-Patient Progress Analysis Pipeline
 
-Comprehensive agentic orchestration for analyzing patient progress based on current conditions,
-historical EHR data, reports, imaging, and diagnostics.
-
-This pipeline integrates multiple specialized agents to provide:
-- Comprehensive data aggregation and normalization
-- Current clinical status assessment
-- Longitudinal progress and risk analysis
-- Imaging and diagnostics interpretation
-- Professional clinical report generation
-- Prioritized alerts and actionable recommendations
-
-Pipeline Flow:
-1. Data Aggregator Agent → Consolidate and normalize all patient data
-2. Current Status Analyzer Agent → Assess current clinical state
-3. Progress & Risk Assessor Agent → Analyze trends and stratify risks
-4. Imaging & Diagnostics Interpreter Agent → Interpret studies and findings
-5. Clinical Report Generator Agent → Create comprehensive clinical report
-6. Alert & Recommendation Agent → Generate prioritized alerts and actions
-
-Usage:
-    from orchestrations.patient_progress_analysis_pipeline import patientProgressAnalysisPipeline
-    
-    result = patientProgressAnalysisPipeline(
-        patient_id="P12345",
-        ehr_summary=ehr_data,
-        current_report="detailed current condition report",
-        historical_reports=[report1, report2, ...],
-        imaging_data=imaging_studies
-    )
-    
-    # Access components:
-    print(result['aggregated_data'])
-    print(result['current_status'])
-    print(result['progress_assessment'])
-    print(result['imaging_interpretation'])
-    print(result['clinical_report'])
-    print(result['alerts_recommendations'])
-    print(result['executive_summary'])
-"""
 
 from agents.sAgents.progressAnalysis.data_aggregator_agent import dataAggregatorAgent
 from agents.sAgents.progressAnalysis.current_status_analyzer_agent import currentStatusAnalyzerAgent
@@ -49,27 +8,22 @@ from agents.sAgents.progressAnalysis.clinical_report_generator_agent import clin
 from agents.sAgents.progressAnalysis.alert_recommendation_agent import alertRecommendationAgent
 import json
 from datetime import datetime
+from ehr_store.patientdata.data_manager import get_report
 
+from agents.sAgents.cache import get_ehr_summary
+from agents.sAgents.differentialdiagnosis import ehr_summary_to_report
 
 def patientProgressAnalysisPipeline(
     patient_id,
-    ehr_summary,
-    current_report,
-    historical_reports=None,
     imaging_data=None,
     include_detailed_logs=False
 ):
+    
     """
     Orchestrates comprehensive patient progress analysis using multiple specialized agents.
     
     Args:
-        patient_id (str): Unique patient identifier
-        ehr_summary (dict or str): Electronic health record summary data
-        current_report (str): Current clinical condition report
-        historical_reports (list, optional): List of historical clinical reports
-        imaging_data (dict or list, optional): Imaging and diagnostic study data
-        include_detailed_logs (bool, optional): Include detailed processing logs
-        
+        patient_id (str): Unique patient identifier    
     Returns:
         dict: Comprehensive analysis results containing all agent outputs and executive summary
         
@@ -89,6 +43,9 @@ def patientProgressAnalysisPipeline(
         }
     """
     
+    current_report = get_report(patient_id)
+    ehr_summary = get_ehr_summary(patient_id, ehr_summary_to_report)
+
     # Initialize results container
     results = {
         "patient_id": patient_id,
@@ -132,7 +89,6 @@ def patientProgressAnalysisPipeline(
             patient_id=patient_id,
             ehr_summary=ehr_summary,
             current_report=current_report,
-            historical_reports=historical_reports,
             imaging_data=imaging_data
         )
         results["aggregated_data"] = aggregated_data
@@ -336,102 +292,3 @@ def patientProgressAnalysisPipelineQuick(
     
     return quick_results
 
-
-# Example usage and testing
-if __name__ == "__main__":
-    """
-    Example usage of the Patient Progress Analysis Pipeline.
-    """
-    
-    # Example patient data
-    example_patient_id = "P001234"
-    
-    example_ehr = {
-        "demographics": {
-            "age": 65,
-            "sex": "Male",
-            "weight_kg": 85,
-            "height_cm": 175
-        },
-        "diagnoses": [
-            {"condition": "Type 2 Diabetes Mellitus", "onset": "2018-03-15", "icd10": "E11.9"},
-            {"condition": "Hypertension", "onset": "2015-06-20", "icd10": "I10"},
-            {"condition": "Chronic Kidney Disease Stage 3", "onset": "2020-09-10", "icd10": "N18.3"}
-        ],
-        "medications": [
-            {"name": "Metformin", "dose": "1000mg", "frequency": "BID", "start_date": "2018-03-15"},
-            {"name": "Lisinopril", "dose": "20mg", "frequency": "Daily", "start_date": "2015-06-20"}
-        ],
-        "allergies": [
-            {"allergen": "Penicillin", "reaction": "Rash"}
-        ],
-        "labs_recent": {
-            "HbA1c": {"value": 7.8, "date": "2024-01-15", "reference": "< 7.0%"},
-            "creatinine": {"value": 1.5, "date": "2024-01-15", "reference": "0.7-1.3 mg/dL"},
-            "eGFR": {"value": 48, "date": "2024-01-15", "reference": "> 60 mL/min/1.73m²"}
-        }
-    }
-    
-    example_current_report = """
-    Patient presents for routine follow-up of Type 2 Diabetes and Chronic Kidney Disease.
-    
-    Current complaints: Increased fatigue over past 2 months, mild peripheral edema.
-    
-    Vital signs: BP 145/88, HR 78, RR 16, Temp 36.8°C, SpO2 98% on room air, Weight 87kg (up 2kg from 3 months ago)
-    
-    Recent labs show HbA1c 7.8% (up from 7.2% three months ago), creatinine 1.5 mg/dL (stable), eGFR 48 (down from 52).
-    
-    Patient reports good medication adherence but admits to dietary indiscretions during holidays.
-    """
-    
-    example_historical_reports = [
-        "2023-10-15: Patient stable, HbA1c 7.2%, eGFR 52, BP well controlled on current regimen.",
-        "2023-07-10: Added Lisinopril for renal protection. Patient educated on diabetic diet."
-    ]
-    
-    example_imaging = [
-        {
-            "study": "Renal Ultrasound",
-            "date": "2023-11-20",
-            "findings": "Bilateral kidneys normal size, increased echogenicity consistent with medical renal disease, no hydronephrosis",
-            "impression": "Findings consistent with chronic kidney disease"
-        }
-    ]
-    
-    print("="*70)
-    print("EXAMPLE: Running Patient Progress Analysis Pipeline")
-    print("="*70)
-    
-    # Run full pipeline
-    results = patientProgressAnalysisPipeline(
-        patient_id=example_patient_id,
-        ehr_summary=example_ehr,
-        current_report=example_current_report,
-        historical_reports=example_historical_reports,
-        imaging_data=example_imaging,
-        include_detailed_logs=True
-    )
-    
-    print("\n" + "="*70)
-    print("EXAMPLE RESULTS SUMMARY")
-    print("="*70)
-    print(f"Patient ID: {results['patient_id']}")
-    print(f"Status: {results['pipeline_status']}")
-    print(f"\nExecutive Summary:")
-    print(json.dumps(results['executive_summary'], indent=2))
-    
-    # Demonstrate quick version
-    print("\n\n" + "="*70)
-    print("EXAMPLE: Running Quick Version")
-    print("="*70)
-    
-    quick_results = patientProgressAnalysisPipelineQuick(
-        patient_id=example_patient_id,
-        ehr_summary=example_ehr,
-        current_report=example_current_report,
-        historical_reports=example_historical_reports,
-        imaging_data=example_imaging
-    )
-    
-    print(f"\nQuick Results - Patient {quick_results['patient_id']}:")
-    print(f"Status: {quick_results['pipeline_status']}")

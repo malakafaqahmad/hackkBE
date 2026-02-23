@@ -2,14 +2,14 @@ from medgemma.medgemmaClient import MedGemmaClient
 import json
 
 
-def dailyProfile(patient_id: str, patientcontext: dict, dailylogscontext: dict):
+def dailyProfile(patient_id: str, patientcontext, weeklylogscontext, patient_report):
     """
     Daily Memory Profile - Creates a snapshot of patient's daily health state for longitudinal tracking.
     
     Args:
         patient_id: Patient identifier
         patientcontext: Comprehensive patient context
-        dailylogscontext: Processed daily logs summary
+        weeklylogscontext: Processed weekly logs summary
     
     Returns:
         dict: Daily health profile snapshot
@@ -76,8 +76,11 @@ KEY PRINCIPLES:
 PATIENT CONTEXT:
 {json.dumps(patientcontext, indent=2)}
 
-DAILY LOGS SUMMARY:
-{json.dumps(dailylogscontext, indent=2)}
+WEEKLY LOGS SUMMARY:
+{json.dumps(weeklylogscontext, indent=2)}
+
+patient_report:
+{patient_report}
 
 Generate the daily profile as specified."""
 
@@ -87,7 +90,7 @@ Generate the daily profile as specified."""
     return response
 
 
-def WeeklyProfile(patient_id: str, patientcontext: dict, weeklylogscontext: dict):
+def WeeklyProfile(patient_id: str, patientcontext, weeklylogscontext, patient_report):
     """
     Weekly Memory Profile - Creates a weekly health state snapshot with trend analysis.
     
@@ -173,6 +176,9 @@ PATIENT CONTEXT:
 WEEKLY LOGS SUMMARY:
 {json.dumps(weeklylogscontext, indent=2)}
 
+PATIENT REPORT:
+{patient_report}
+
 Generate the weekly profile as specified."""
 
     client = MedGemmaClient(system_prompt)
@@ -181,7 +187,7 @@ Generate the weekly profile as specified."""
     return response
 
 
-def monthlyProfile(patient_id: str, patientcontext: dict, monthlylogscontext: dict):
+def monthlyProfile(patient_id: str, patientcontext, monthlylogscontext, patient_report):
     """
     Monthly Memory Profile - Creates long-term health trajectory snapshot.
     
@@ -282,6 +288,8 @@ PATIENT CONTEXT:
 MONTHLY LOGS SUMMARY:
 {json.dumps(monthlylogscontext, indent=2)}
 
+patient_report:
+{patient_report}
 Generate the monthly profile as specified."""
 
     client = MedGemmaClient(system_prompt)

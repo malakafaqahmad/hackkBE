@@ -1,3 +1,4 @@
+from ehr_store.patientdata.data_manager import load_report
 from medgemma.medgemmaClient import MedGemmaClient
 import json
 
@@ -8,7 +9,7 @@ def emergencyRiskAnalyzer(patient_id, ehr_summary, current_symptoms):
     Evaluates vital signs, symptoms, medical history, and medications.
     """
 
-    current_report = 'current reprt'
+    current_report = load_report(patient_id)  # Load current report for additional context if needed
     
     system_prompt = """
 <Role>

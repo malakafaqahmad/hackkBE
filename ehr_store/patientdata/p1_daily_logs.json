@@ -1,406 +1,541 @@
 [
-    {
-        "day": 1,
-        "diet": {
-            "morning": [
-                "vegetables",
-                "fish"
-            ],
-            "lunch": [
-                "toast",
-                "oatmeal"
-            ],
-            "dinner": [
-                "egg",
-                "pasta"
-            ]
-        },
-        "exercise_minutes": 34,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 144.0,
-            "DBP": 95.0,
-            "HR": 91.0,
-            "O2_saturation": 95.0,
-            "temperature": 36.9
-        },
-        "labs": {
-            "weight_kg": 75.8,
-            "Hb": 12.3,
-            "fasting_glucose": 96.0
-        },
-        "symptoms": []
+  {
+    "day": 1,
+    "diet": {
+      "morning": [
+        "vegetables",
+        "fish"
+      ],
+      "lunch": [
+        "toast",
+        "oatmeal"
+      ],
+      "dinner": [
+        "egg",
+        "pasta"
+      ]
     },
-    {
-        "day": 2,
-        "diet": {
-            "morning": [
-                "vegetables",
-                "pasta"
-            ],
-            "lunch": [
-                "oatmeal",
-                "rice"
-            ],
-            "dinner": [
-                "rice",
-                "banana"
-            ]
-        },
-        "exercise_minutes": 39,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 142.0,
-            "DBP": 92.0,
-            "HR": 92.0,
-            "O2_saturation": 95.0,
-            "temperature": 37.0
-        },
-        "labs": {},
-        "symptoms": []
+    "exercise_minutes": 34,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 144.0,
+      "DBP": 95.0,
+      "HR": 91.0,
+      "O2_saturation": 95.0,
+      "temperature": 36.9
     },
-    {
-        "day": 3,
-        "diet": {
-            "morning": [
-                "fish",
-                "toast"
-            ],
-            "lunch": [
-                "oatmeal",
-                "vegetables"
-            ],
-            "dinner": [
-                "rice",
-                "pasta"
-            ]
-        },
-        "exercise_minutes": 15,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 0
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 143.0,
-            "DBP": 96.0,
-            "HR": 88.0,
-            "O2_saturation": 95.0,
-            "temperature": 36.8
-        },
-        "labs": {},
-        "symptoms": []
+    "labs": {
+      "weight_kg": 75.8,
+      "Hb": 12.3,
+      "fasting_glucose": 96.0
     },
-    {
-        "day": 4,
-        "diet": {
-            "morning": [
-                "egg",
-                "chicken_salad"
-            ],
-            "lunch": [
-                "pasta",
-                "toast"
-            ],
-            "dinner": [
-                "chicken_salad",
-                "toast"
-            ]
-        },
-        "exercise_minutes": 28,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 0
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 147.0,
-            "DBP": 92.0,
-            "HR": 88.0,
-            "O2_saturation": 94.0,
-            "temperature": 36.7
-        },
-        "labs": {
-            "weight_kg": 76.1,
-            "Hb": 12.6,
-            "fasting_glucose": 110.0
-        },
-        "symptoms": []
+    "symptoms": []
+  },
+  {
+    "day": 2,
+    "diet": {
+      "morning": [
+        "vegetables",
+        "pasta"
+      ],
+      "lunch": [
+        "oatmeal",
+        "rice"
+      ],
+      "dinner": [
+        "rice",
+        "banana"
+      ]
     },
-    {
-        "day": 5,
-        "diet": {
-            "morning": [
-                "oatmeal",
-                "fish"
-            ],
-            "lunch": [
-                "chicken_salad",
-                "vegetables"
-            ],
-            "dinner": [
-                "banana",
-                "oatmeal"
-            ]
-        },
-        "exercise_minutes": 28,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 144.0,
-            "DBP": 92.0,
-            "HR": 85.0,
-            "O2_saturation": 94.0,
-            "temperature": 37.0
-        },
-        "labs": {},
-        "symptoms": []
+    "exercise_minutes": 39,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 142.0,
+      "DBP": 92.0,
+      "HR": 92.0,
+      "O2_saturation": 95.0,
+      "temperature": 37.0
     },
-    {
-        "day": 6,
-        "diet": {
-            "morning": [
-                "vegetables",
-                "fish"
-            ],
-            "lunch": [
-                "banana",
-                "egg"
-            ],
-            "dinner": [
-                "chicken_salad",
-                "oatmeal"
-            ]
-        },
-        "exercise_minutes": 35,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 0
-            }
-        ],
-        "vitals": {
-            "SBP": 147.0,
-            "DBP": 93.0,
-            "HR": 87.0,
-            "O2_saturation": 96.0,
-            "temperature": 37.2
-        },
-        "labs": {},
-        "symptoms": []
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "day": 3,
+    "diet": {
+      "morning": [
+        "fish",
+        "toast"
+      ],
+      "lunch": [
+        "oatmeal",
+        "vegetables"
+      ],
+      "dinner": [
+        "rice",
+        "pasta"
+      ]
     },
-    {
-        "day": 7,
-        "diet": {
-            "morning": [
-                "chicken_salad",
-                "fish"
-            ],
-            "lunch": [
-                "fish",
-                "egg"
-            ],
-            "dinner": [
-                "oatmeal",
-                "chicken_salad"
-            ]
-        },
-        "exercise_minutes": 25,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 144.0,
-            "DBP": 96.0,
-            "HR": 88.0,
-            "O2_saturation": 94.0,
-            "temperature": 37.0
-        },
-        "labs": {},
-        "symptoms": []
+    "exercise_minutes": 15,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 0
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 143.0,
+      "DBP": 96.0,
+      "HR": 88.0,
+      "O2_saturation": 95.0,
+      "temperature": 36.8
     },
-    {
-        "day": 8,
-        "diet": {
-            "morning": [
-                "rice",
-                "toast"
-            ],
-            "lunch": [
-                "oatmeal",
-                "pasta"
-            ],
-            "dinner": [
-                "egg",
-                "toast"
-            ]
-        },
-        "exercise_minutes": 34,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 144,
-            "DBP": 95,
-            "HR": 91,
-            "O2_saturation": 95,
-            "temperature": 36.9
-        },
-        "labs": {},
-        "symptoms": []
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "day": 4,
+    "diet": {
+      "morning": [
+        "egg",
+        "chicken_salad"
+      ],
+      "lunch": [
+        "pasta",
+        "toast"
+      ],
+      "dinner": [
+        "chicken_salad",
+        "toast"
+      ]
     },
-    {
-        "day": 9,
-        "diet": {
-            "morning": [
-                "rice",
-                "fish"
-            ],
-            "lunch": [
-                "vegetables",
-                "egg"
-            ],
-            "dinner": [
-                "banana",
-                "toast"
-            ]
-        },
-        "exercise_minutes": 34,
-        "medications_taken": [
-            {
-                "name": "amlodipine",
-                "dose_mg": 5,
-                "taken_times": 1
-            },
-            {
-                "name": "metformin",
-                "dose_mg": 500,
-                "taken_times": 1
-            },
-            {
-                "name": "atorvastatin",
-                "dose_mg": 20,
-                "taken_times": 1
-            }
-        ],
-        "vitals": {
-            "SBP": 144,
-            "DBP": 95,
-            "HR": 91,
-            "O2_saturation": 95,
-            "temperature": 36.9
-        },
-        "labs": {},
-        "symptoms": []
+    "exercise_minutes": 28,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 0
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 147.0,
+      "DBP": 92.0,
+      "HR": 88.0,
+      "O2_saturation": 94.0,
+      "temperature": 36.7
+    },
+    "labs": {
+      "weight_kg": 76.1,
+      "Hb": 12.6,
+      "fasting_glucose": 110.0
+    },
+    "symptoms": []
+  },
+  {
+    "day": 5,
+    "diet": {
+      "morning": [
+        "oatmeal",
+        "fish"
+      ],
+      "lunch": [
+        "chicken_salad",
+        "vegetables"
+      ],
+      "dinner": [
+        "banana",
+        "oatmeal"
+      ]
+    },
+    "exercise_minutes": 28,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 144.0,
+      "DBP": 92.0,
+      "HR": 85.0,
+      "O2_saturation": 94.0,
+      "temperature": 37.0
+    },
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "day": 6,
+    "diet": {
+      "morning": [
+        "vegetables",
+        "fish"
+      ],
+      "lunch": [
+        "banana",
+        "egg"
+      ],
+      "dinner": [
+        "chicken_salad",
+        "oatmeal"
+      ]
+    },
+    "exercise_minutes": 35,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 0
+      }
+    ],
+    "vitals": {
+      "SBP": 147.0,
+      "DBP": 93.0,
+      "HR": 87.0,
+      "O2_saturation": 96.0,
+      "temperature": 37.2
+    },
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "day": 7,
+    "diet": {
+      "morning": [
+        "chicken_salad",
+        "fish"
+      ],
+      "lunch": [
+        "fish",
+        "egg"
+      ],
+      "dinner": [
+        "oatmeal",
+        "chicken_salad"
+      ]
+    },
+    "exercise_minutes": 25,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 144.0,
+      "DBP": 96.0,
+      "HR": 88.0,
+      "O2_saturation": 94.0,
+      "temperature": 37.0
+    },
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "day": 8,
+    "diet": {
+      "morning": [
+        "rice",
+        "toast"
+      ],
+      "lunch": [
+        "oatmeal",
+        "pasta"
+      ],
+      "dinner": [
+        "egg",
+        "toast"
+      ]
+    },
+    "exercise_minutes": 34,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 144,
+      "DBP": 95,
+      "HR": 91,
+      "O2_saturation": 95,
+      "temperature": 36.9
+    },
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "day": 9,
+    "diet": {
+      "morning": [
+        "rice",
+        "fish"
+      ],
+      "lunch": [
+        "vegetables",
+        "egg"
+      ],
+      "dinner": [
+        "banana",
+        "toast"
+      ]
+    },
+    "exercise_minutes": 34,
+    "medications_taken": [
+      {
+        "name": "amlodipine",
+        "dose_mg": 5,
+        "taken_times": 1
+      },
+      {
+        "name": "metformin",
+        "dose_mg": 500,
+        "taken_times": 1
+      },
+      {
+        "name": "atorvastatin",
+        "dose_mg": 20,
+        "taken_times": 1
+      }
+    ],
+    "vitals": {
+      "SBP": 144,
+      "DBP": 95,
+      "HR": 91,
+      "O2_saturation": 95,
+      "temperature": 36.9
+    },
+    "labs": {},
+    "symptoms": []
+  },
+  {
+    "date": "2026-02-22",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 1204,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 15041ddc-fbba-4d91-9f53-e87b61fb597f\n    "
     }
+  },
+  {
+    "date": "2026-02-22",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 160,
+      "blood_pressure_diastolic": 119,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 63993ee1-c362-4d6e-99b8-83ecaf1aadbb\n    "
+    }
+  },
+  {
+    "date": "2026-02-22",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 5f7ddb19-ac11-47f3-a2bc-33d2925ed518\n    "
+    }
+  },
+  {
+    "date": "2026-02-23",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 87ea8c2e-ff5b-439c-b811-6617151cb952\n    "
+    }
+  },
+  {
+    "date": "2026-02-23",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 97
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd c7bc0c06-6b56-4476-94f1-01f3d89dbcad\n    "
+    }
+  }
 ]

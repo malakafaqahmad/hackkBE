@@ -9,8 +9,9 @@ from agents.sAgents.digitaltwin.memoryAgents import dailyProfile, WeeklyProfile,
 from agents.sAgents.digitaltwin.patientContextAgent import pca
 from agents.sAgents.digitaltwin.symptomsCorelatorAgent import symptomsCorelatorAgent
 from agents.sAgents.digitaltwin.diffReasoner import diffreasoner
+from ehr_store.patientdata.data_manager import append_daily_log, load_report
+from ehr_store.patientdata.data_manager import get_recent_daily_logs
 import json
-
 
 def digitaltwinpipeline(patient_id: str, input_logs: dict):
     """
@@ -107,7 +108,12 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
     
     print(f"🚀 Starting Digital Twin Pipeline for Patient: {patient_id}")
     print("=" * 80)
-    
+
+    weekly_logs = get_recent_daily_logs(patient_id, number_of_days=7)
+    monthly_logs = get_recent_daily_logs(patient_id, number_of_days=30)
+
+    patient_report = load_report(patient_id)  # Load previous patient report for context (if available)
+
     # =============================================================================
     # STAGE 1: CONTEXT & DATA PREPARATION
     # =============================================================================
@@ -127,14 +133,25 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
     # 1.2 Enrich Nutrition Data
     print("  [2/3] Enriching nutrition data...")
     try:
-        if "nutrition" in input_logs.get("daily_logs", {}):
-            nutrition_analysis = nutritionalAgent(input_logs["daily_logs"]["nutrition"])
+
+
+        if "nutrition" in input_logs:
+            print("  🔍 Nutrition data found, analyzing...")
+            print(f"  📊 Original Nutrition Data: {input_logs.get('nutrition', 'None')}")
+            nutrition_analysis = nutritionalAgent(input_logs.get("nutrition", None))
             nutrition_analysis = json.loads(nutrition_analysis) if isinstance(nutrition_analysis, str) else nutrition_analysis
             # Update daily logs with enriched nutrition data
-            input_logs["daily_logs"]["nutrition_enriched"] = nutrition_analysis
+            input_logs["nutrition_enriched"] = nutrition_analysis
+            
             print("  ✅ Nutrition data enriched successfully")
+            print("new dailylogs are ")
+
+            # appent these logs to daily logs
+            append_daily_log(patient_id, input_logs)
+
+
         else:
-            print("  ⚠️  No nutrition data provided, skipping enrichment")
+            print(" ⚠️  No nutrition data provided, skipping enrichment")
             nutrition_analysis = None
     except Exception as e:
         print(f"  ⚠️  Error enriching nutrition data: {e}")
@@ -147,7 +164,7 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
         daily_logs_summary = dailylogsAgent(
             patient_id,
             patient_context,
-            input_logs.get("daily_logs", {})
+            input_logs
         )
         daily_logs_summary = json.loads(daily_logs_summary) if isinstance(daily_logs_summary, str) else daily_logs_summary
         
@@ -155,8 +172,7 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
         weekly_logs_summary = weeklylogsAgent(
             patient_id,
             patient_context,
-            input_logs.get("weekly_logs", []),
-            input_logs.get("previous_weekly_logs", [])
+            weekly_logs
         )
         weekly_logs_summary = json.loads(weekly_logs_summary) if isinstance(weekly_logs_summary, str) else weekly_logs_summary
         
@@ -164,8 +180,7 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
         monthly_logs_summary = monthlylogsAgent(
             patient_id,
             patient_context,
-            input_logs.get("monthly_logs", []),
-            input_logs.get("previous_monthly_logs", [])
+            monthly_logs
         )
         monthly_logs_summary = json.loads(monthly_logs_summary) if isinstance(monthly_logs_summary, str) else monthly_logs_summary
         
@@ -183,17 +198,17 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
     try:
         # Daily memory profile
         print("  [1/3] Creating daily memory profile...")
-        daily_memory_profile = dailyProfile(patient_id, patient_context, daily_logs_summary)
+        daily_memory_profile = dailyProfile(patient_id, patient_context, weekly_logs_summary, patient_report)
         daily_memory_profile = json.loads(daily_memory_profile) if isinstance(daily_memory_profile, str) else daily_memory_profile
         
         # Weekly memory profile
         print("  [2/3] Creating weekly memory profile...")
-        weekly_memory_profile = WeeklyProfile(patient_id, patient_context, weekly_logs_summary)
+        weekly_memory_profile = WeeklyProfile(patient_id, patient_context, weekly_logs_summary, patient_report)
         weekly_memory_profile = json.loads(weekly_memory_profile) if isinstance(weekly_memory_profile, str) else weekly_memory_profile
         
         # Monthly memory profile
         print("  [3/3] Creating monthly memory profile...")
-        monthly_memory_profile = monthlyProfile(patient_id, patient_context, monthly_logs_summary)
+        monthly_memory_profile = monthlyProfile(patient_id, patient_context, monthly_logs_summary, patient_report)
         monthly_memory_profile = json.loads(monthly_memory_profile) if isinstance(monthly_memory_profile, str) else monthly_memory_profile
         
         print("  ✅ All memory profiles created successfully")
@@ -222,9 +237,8 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
         lifestyle_evaluation = lifestyleEvalAgent(
             patient_id,
             patient_context,
-            daily_logs_summary,
-            weekly_logs_summary,
-            monthly_logs_summary
+            monthly_logs_summary,
+            patient_report
         )
         lifestyle_evaluation = json.loads(lifestyle_evaluation) if isinstance(lifestyle_evaluation, str) else lifestyle_evaluation
         
@@ -233,9 +247,9 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
         symptoms_correlation = symptomsCorelatorAgent(
             patient_id,
             patient_context,
-            daily_logs_summary,
             weekly_logs_summary,
-            monthly_logs_summary
+            patient_report,
+            weekly_memory_profile
         )
         symptoms_correlation = json.loads(symptoms_correlation) if isinstance(symptoms_correlation, str) else symptoms_correlation
         
@@ -243,6 +257,7 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
     except Exception as e:
         print(f"  ❌ Error in parallel analysis: {e}")
         raise
+    
     
     # =============================================================================
     # STAGE 4: PREDICTIVE LAYER

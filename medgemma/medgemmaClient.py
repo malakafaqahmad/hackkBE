@@ -239,7 +239,7 @@ class MedGemmaClient:
         # print(f"Sending messages to /respond endpoint: {messages}")
         # print(f"📍 URL: {self.base_url}/respond")
         # print("=" * 60)
-        print("files received in client: ", user_msg)
+        # print("files received in client: ", user_msg)
 
         if image_object is not None:
             print("Image object provided, size in bytes:", len(image_object) if isinstance(image_object, bytes) else "N/A")

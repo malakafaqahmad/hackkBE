@@ -3,6 +3,9 @@ import json
 
 from agents.sAgents.cache import get_ehr_summary
 from agents.sAgents.differentialdiagnosis.ehrReport import ehr_summary_to_report
+from manageEhr.ehr_manager import EHRManager
+
+ehr_manager = EHRManager()
 
 
 def pca(patient_id: str):
@@ -18,8 +21,9 @@ def pca(patient_id: str):
     """
     
     # Load patient EHR data report using cache
-    patient_ehr = get_ehr_summary(patient_id, ehr_summary_to_report)
-
+    # patient_ehr = get_ehr_summary(patient_id, ehr_summary_to_report)
+    patient_ehr = ehr_manager.get_all_patient_ehr_data(patient_id)
+    # print(json.dumps(patient_ehr, indent=2))  # Print the EHR data for debugging
     system_prompt = """You are an Expert Clinical Data Synthesizer AI specializing in Electronic Health Records analysis.
 
 YOUR ROLE:
@@ -87,4 +91,4 @@ Provide a complete, structured patient context as specified in the output format
     response = client.respond(user_prompt)
 
     return response
-    
+

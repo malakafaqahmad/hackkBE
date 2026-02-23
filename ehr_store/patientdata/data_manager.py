@@ -228,6 +228,40 @@ def append_daily_log(patient_id: str, log_entry: Dict[str, Any]) -> bool:
     return save_daily_logs(patient_id, logs, create_backup=False)
 
 
+def get_recent_daily_logs(patient_id: str, number_of_days: int) -> List[Dict[str, Any]]:
+    """
+    Fetch the last N days of daily logs for a patient.
+    
+    Args:
+        patient_id: Patient identifier (e.g., "p1", "p2")
+        number_of_days: Number of recent days to retrieve
+    
+    Returns:
+        List of the most recent daily log entries (up to number_of_days)
+        Returns empty list if file doesn't exist or no logs available
+    
+    Example:
+        >>> # Get last 7 days of logs for patient p1
+        >>> recent_logs = get_recent_daily_logs("p1", 7)
+        >>> print(f"Retrieved {len(recent_logs)} days of logs")
+        Retrieved 7 days of logs
+        
+        >>> # Get last 3 days only
+        >>> last_3_days = get_recent_daily_logs("p1", 3)
+        >>> for log in last_3_days:
+        ...     print(f"Day {log['day']}: BP {log['vitals']['SBP']}/{log['vitals']['DBP']}")
+    """
+    # Load all daily logs for the patient
+    all_logs = load_daily_logs(patient_id)
+    
+    # Return the last N entries
+    # If number_of_days is greater than available logs, return all logs
+    if not all_logs:
+        return []
+    
+    return all_logs[-number_of_days:] if number_of_days > 0 else []
+
+
 # ============================================================================
 # DIET DATA
 # ============================================================================

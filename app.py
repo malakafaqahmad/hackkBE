@@ -9,6 +9,7 @@ import io
 from PIL import Image
 from agents.sAgents.pdfreader import PDFReader
 from orchestrations.imageshandler import images_handler_orchestration, pdf_handler_orchestration
+from ehr_store.patientdata.data_manager import get_daily_logs, get_recent_daily_logs, save_report
 
 # Add paths for imports
 _module_dir = Path(__file__).parent
@@ -116,7 +117,9 @@ def unified_chat():
             user_message=data.get('message')
         )
         
-        # print(f"Result from orchestrator: {result}")
+        print(f"Result from orchestrator: {result.get('final_report')}")
+        if result.get("final_report"):
+            save_report(data.get('patient_id'), result.get("final_report"))
         # print("Returning response to client...")
 
         return jsonify(result), 200
@@ -590,10 +593,6 @@ def digital_twin_analyze():
             "labs": [],
             "notes": "Feeling good today"
         },
-        "weekly_logs": [...],                  // Required: Array of 7 daily logs
-        "previous_weekly_logs": [...],         // Required: Previous week's logs
-        "monthly_logs": [...],                 // Required: Array of ~30 daily logs
-        "previous_monthly_logs": [...]         // Required: Previous month's logs
     }
     
     Returns:
@@ -633,6 +632,8 @@ def digital_twin_analyze():
         
         data = request.get_json()
         print(f"📦 Request data keys: {list(data.keys()) if data else 'None'}")
+        print(f"📦 Request data keys: {list(data.get('daily_logs', {}).keys()) if data else 'None'}")
+
         
         if not data:
             return jsonify({
@@ -642,40 +643,19 @@ def digital_twin_analyze():
         
         # Validate required fields
         patient_id = data.get('patient_id')
+        daily_logs = data['daily_logs']
+
         if not patient_id:
             return jsonify({
                 'error': 'patient_id is required',
                 'success': False
             }), 400
         
-        # Validate required log data
-        required_logs = ['daily_logs', 'weekly_logs', 'previous_weekly_logs', 
-                        'monthly_logs', 'previous_monthly_logs']
-        missing_logs = [log for log in required_logs if log not in data]
+        print(daily_logs)
         
-        if missing_logs:
-            return jsonify({
-                'error': f'Missing required log data: {", ".join(missing_logs)}',
-                'success': False,
-                'hint': 'Provide daily_logs, weekly_logs, previous_weekly_logs, monthly_logs, and previous_monthly_logs'
-            }), 400
-        
-        # Prepare input logs
-        input_logs = {
-            'daily_logs': data['daily_logs'],
-            'weekly_logs': data['weekly_logs'],
-            'previous_weekly_logs': data['previous_weekly_logs'],
-            'monthly_logs': data['monthly_logs'],
-            'previous_monthly_logs': data['previous_monthly_logs']
-        }
-        
-        print(f"🚀 Starting Digital Twin Pipeline for patient: {patient_id}")
-        print(f"📊 Daily logs date: {input_logs['daily_logs'].get('date', 'N/A')}")
-        print(f"📊 Weekly logs count: {len(input_logs['weekly_logs'])}")
-        print(f"📊 Monthly logs count: {len(input_logs['monthly_logs'])}")
         
         # Run the pipeline
-        result = digitaltwinpipeline(patient_id, input_logs)
+        result = digitaltwinpipeline(patient_id, daily_logs)
         
         print("✅ Digital Twin Pipeline completed successfully")
         print(f"📈 Health Score: {result['executive_summary']['health_score']}")
@@ -739,6 +719,7 @@ def digital_twin_quick_check():
         print("="*80)
         
         data = request.get_json()
+        print(data)
         
         if not data or not data.get('patient_id') or not data.get('daily_logs'):
             return jsonify({
@@ -1045,7 +1026,21 @@ def document_analyzer():
         }), 500
 
 
-
+@app.route('/api/logs/<patient_id>', methods=['GET'])
+def get_logs(patient_id):
+    try:
+        logs = get_recent_daily_logs(patient_id, 10)
+        return jsonify({
+            'success': True,
+            'patient_id': patient_id,
+            'logs': logs
+        }), 200
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': f'Failed to retrieve logs for patient {patient_id}',
+            'details': str(e)
+        }), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

@@ -1,0 +1,83 @@
+[
+  {
+    "date": "2026-02-22",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 589bd608-fee9-4a9a-959e-1f795365b837\n    "
+    }
+  },
+  {
+    "date": "2026-02-23",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 5cd90d2a-218c-48cd-a3eb-452940f98a30\n    "
+    }
+  },
+  {
+    "date": "2026-02-23",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd a11cd161-f515-4bf3-bdac-bf2c6a51cc78\n    "
+    }
+  }
+]
