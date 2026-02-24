@@ -1,0 +1,178 @@
+[
+  {
+    "date": "2026-03-16",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:05", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:00", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 138,
+      "blood_pressure_diastolic": 88,
+      "heart_rate": 74,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 105,
+      "weight_lbs": 177,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [
+      {"symptom": "Mild fatigue", "severity": "mild", "time_reported": "10:30"}
+    ],
+    "exercise": {"exercise_minutes": 30, "type": "walking", "intensity": "light"},
+    "nutrition": {
+      "meals": [
+        {"meal_time": "morning", "items":[{"food_name":"Oatmeal","portion_size_g":150},{"food_name":"Apple","portion_size_g":100}]},
+        {"meal_time": "afternoon", "items":[{"food_name":"Grilled chicken","portion_size_g":120},{"food_name":"Steamed broccoli","portion_size_g":100}]},
+        {"meal_time": "night", "items":[{"food_name":"Brown rice","portion_size_g":100},{"food_name":"Lentil soup","portion_size_g":150}]}
+      ]
+    },
+    "labs": [],
+    "notes": "Stable today. No chest pain during exercise.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":45,\"salt\":0.1,\"sugar\":14},\"lunch\":{\"sodium\":0.4,\"carbs\":25,\"salt\":0.2,\"sugar\":3},\"dinner\":{\"sodium\":0.3,\"carbs\":40,\"salt\":0.2,\"sugar\":2}},\"nutritional_summary\":\"Low-sodium balanced diet maintained.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-17",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:00", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:05", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 135,
+      "blood_pressure_diastolic": 85,
+      "heart_rate": 72,
+      "temperature_f": 98.5,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 176,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {"exercise_minutes": 35, "type": "walking", "intensity": "moderate"},
+    "nutrition": {"meals":[]},
+    "labs": [],
+    "notes": "Feeling energetic. Exercise well tolerated.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":40,\"salt\":0.1,\"sugar\":12},\"lunch\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":4},\"dinner\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":3}},\"nutritional_summary\":\"Low-sodium, cardiac-friendly diet continues.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-18",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:05", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:00", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 140,
+      "blood_pressure_diastolic": 86,
+      "heart_rate": 74,
+      "temperature_f": 98.7,
+      "blood_glucose_mg_dl": 103,
+      "weight_lbs": 176,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {"exercise_minutes": 40, "type": "cardiac rehab cycling", "intensity": "moderate"},
+    "nutrition": {"meals":[]},
+    "labs": [],
+    "notes": "Stable. No exertional symptoms.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":45,\"salt\":0.1,\"sugar\":10},\"lunch\":{\"sodium\":0.4,\"carbs\":30,\"salt\":0.2,\"sugar\":5},\"dinner\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":4}},\"nutritional_summary\":\"Consistent low-sodium diet.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-19",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:00", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:00", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 136,
+      "blood_pressure_diastolic": 84,
+      "heart_rate": 70,
+      "temperature_f": 98.5,
+      "blood_glucose_mg_dl": 101,
+      "weight_lbs": 175,
+      "oxygen_saturation_percent": 99
+    },
+    "symptoms": [],
+    "exercise": {"exercise_minutes": 30, "type": "walking", "intensity": "light"},
+    "nutrition": {"meals":[]},
+    "labs": [],
+    "notes": "Stable. Feeling good throughout the day.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":40,\"salt\":0.1,\"sugar\":10},\"lunch\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":5},\"dinner\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":4}},\"nutritional_summary\":\"Balanced, heart-healthy meals maintained.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-20",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:00", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:05", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 137,
+      "blood_pressure_diastolic": 85,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 102,
+      "weight_lbs": 175,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {"exercise_minutes": 35, "type": "cardiac rehab treadmill", "intensity": "moderate"},
+    "nutrition": {"meals":[]},
+    "labs": [],
+    "notes": "Exercise tolerated well. Stable cardiac status.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":45,\"salt\":0.1,\"sugar\":10},\"lunch\":{\"sodium\":0.3,\"carbs\":30,\"salt\":0.2,\"sugar\":5},\"dinner\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":4}},\"nutritional_summary\":\"Controlled, heart-healthy diet.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-21",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:00", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:00", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 134,
+      "blood_pressure_diastolic": 82,
+      "heart_rate": 70,
+      "temperature_f": 98.5,
+      "blood_glucose_mg_dl": 99,
+      "weight_lbs": 175,
+      "oxygen_saturation_percent": 99
+    },
+    "symptoms": [],
+    "exercise": {"exercise_minutes": 40, "type": "walking", "intensity": "moderate"},
+    "nutrition": {"meals":[]},
+    "labs": [],
+    "notes": "Stable. Minimal symptoms today. Excellent compliance.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":40,\"salt\":0.1,\"sugar\":10},\"lunch\":{\"sodium\":0.3,\"carbs\":30,\"salt\":0.2,\"sugar\":5},\"dinner\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":4}},\"nutritional_summary\":\"Stable, cardiac-friendly diet maintained.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-22",
+    "medications_taken": [
+      {"medication_name": "Clopidogrel 75mg", "prescribed_time": "08:00", "actual_time": "08:00", "taken": true},
+      {"medication_name": "Atorvastatin 40mg", "prescribed_time": "21:00", "actual_time": "21:05", "taken": true}
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 136,
+      "blood_pressure_diastolic": 83,
+      "heart_rate": 71,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 175,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {"exercise_minutes": 30, "type": "walking", "intensity": "light"},
+    "nutrition": {"meals":[]},
+    "labs": [],
+    "notes": "Routine day. No symptoms. Fully controlled.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.2,\"carbs\":40,\"salt\":0.1,\"sugar\":10},\"lunch\":{\"sodium\":0.3,\"carbs\":30,\"salt\":0.2,\"sugar\":5},\"dinner\":{\"sodium\":0.3,\"carbs\":35,\"salt\":0.2,\"sugar\":4}},\"nutritional_summary\":\"Excellent dietary compliance and stable cardiovascular status.\"}\n```"
+    }
+  }
+]

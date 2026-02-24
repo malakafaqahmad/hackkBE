@@ -29,81 +29,63 @@ YOUR ROLE:
 - Identify critical situations requiring immediate attention
 - Aggregate related alerts to avoid duplication
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "alert_generation_timestamp": "YYYY-MM-DD HH:MM",
-    "patient_id": "string",
-    "alerts": [
-        {
-            "alert_id": "string (unique identifier)",
-            "priority": "critical/high/medium/low",
-            "category": "medication/vitals/symptoms/lifestyle/labs/forecast/adherence",
-            "title": "string (concise alert title)",
-            "description": "string (detailed alert description)",
-            "triggered_by": "string (what caused this alert)",
-            "clinical_significance": "string (why this matters clinically)",
-            "relevant_values": {
-                "current": "string/number",
-                "threshold": "string/number",
-                "baseline": "string/number (if applicable)"
-            },
-            "trend": "worsening/new/stable/improving",
-            "duration": "string (how long issue has persisted)",
-            "recommended_action": "string (specific action to take)",
-            "urgency": "immediate/within_24hrs/within_72hrs/routine",
-            "escalation_required": boolean,
-            "escalation_to": "emergency/urgent_care/primary_care/specialist/pharmacist",
-            "patient_notification_required": boolean,
-            "patient_message": "string (patient-friendly message)",
-            "clinician_notes": "string (technical details for clinician)",
-            "related_alerts": ["alert_ids of related alerts"],
-            "suppressed_similar_alerts": integer (number of duplicate alerts suppressed)
-        }
-    ],
-    "alert_summary": {
-        "total_alerts": integer,
-        "critical_count": integer,
-        "high_priority_count": integer,
-        "medium_priority_count": integer,
-        "low_priority_count": integer,
-        "requires_immediate_attention": boolean,
-        "requires_same_day_attention": boolean,
-        "escalation_recommended": boolean
-    },
-    "alert_categories": {
-        "medication_alerts": integer,
-        "vital_signs_alerts": integer,
-        "symptom_alerts": integer,
-        "lifestyle_alerts": integer,
-        "lab_alerts": integer,
-        "forecast_alerts": integer,
-        "adherence_alerts": integer
-    },
-    "suppressed_alerts": [
-        {
-            "alert_type": "string",
-            "reason_suppressed": "duplicate/low_priority/transient/noise",
-            "count": integer
-        }
-    ],
-    "trend_alerts": [
-        {
-            "trend": "string",
-            "direction": "worsening/improving",
-            "clinical_concern": "string",
-            "action_needed": "string"
-        }
-    ],
-    "critical_alert_summary": "string (summary of all critical alerts)",
-    "immediate_actions_required": ["list of immediate actions"],
-    "follow_up_recommendations": [
-        {
-            "recommendation": "string",
-            "timeframe": "string",
-            "priority": "high/medium/low"
-        }
-    ]
-}
+OUTPUT FORMAT (Structured Clinical Report):
+Please provide the analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# CLINICAL ALERT REPORT
+**Generation Timestamp:** [YYYY-MM-DD HH:MM]
+**Patient ID:** [string]
+
+## 1. EXECUTIVE SUMMARY
+- **Total Alerts:** [integer]
+- **Urgency Levels:** [Critical: X | High: X | Medium: X | Low: X]
+- **Immediate Attention Required:** [Yes/No]
+- **Same-Day Attention Required:** [Yes/No]
+- **Escalation Recommended:** [Yes/No]
+
+## 2. CRITICAL ALERT OVERVIEW
+[Provide a concise narrative summary of all critical alerts here. If none, state "No critical alerts identified."]
+
+## 3. ACTIVE ALERTS
+(For each generated alert, provide the following details:)
+
+### [PRIORITY]: [Alert Title]
+- **Alert ID:** [unique identifier]
+- **Category:** [medication/vitals/symptoms/lifestyle/labs/forecast/adherence]
+- **Description:** [Detailed explanation]
+- **Triggered By:** [What specifically caused this alert]
+- **Clinical Significance:** [Why this matters clinically]
+- **Relevant Values:** - Current: [value]
+    - Threshold: [value]
+    - Baseline: [value, if applicable]
+- **Trend & Duration:** [Trend status] over the last [duration]
+- **Recommended Action:** [Specific, actionable steps]
+- **Urgency & Escalation:** [Urgency level] | Escalation to: [Target] (Required: Yes/No)
+- **Patient Communication:** [Patient-friendly message] (Notification Required: Yes/No)
+- **Clinician Notes:** [Technical details for medical staff]
+- **Related Context:** [Related Alert IDs] | [Number] similar alerts suppressed.
+
+## 4. TRENDS & OBSERVATIONS
+(List specific trend alerts)
+- **Trend:** [Description] | **Direction:** [Worsening/Improving]
+- **Clinical Concern:** [Details]
+- **Action Needed:** [Steps to take]
+
+## 5. ALERT STATISTICS & SUPPRESSION
+### Category Breakdown
+- Medication: [X] | Vitals: [X] | Symptoms: [X] | Lifestyle: [X] | Labs: [X] | Forecast: [X] | Adherence: [X]
+
+### Suppressed Data (Noise Reduction)
+- [List Alert Type]: [Reason: duplicate/low_priority/etc.] ([Count])
+
+## 6. REQUIRED ACTIONS & FOLLOW-UP
+### Immediate Actions
+- [List all immediate actions required]
+
+### Follow-up Recommendations
+- **Recommendation:** [Task] | **Timeframe:** [When] | **Priority:** [H/M/L]
+
+---
 
 ALERT PRIORITIZATION RULES:
 

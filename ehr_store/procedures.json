@@ -1,0 +1,44 @@
+[
+{
+  "id": "proc-001",
+  "patient_id": "p2",
+  "procedure_name": "Coronary Angiography",
+  "procedure_date": "2022-06-16",
+  "doctor_id": "d1",
+  "indication": "Unstable angina with abnormal ECG findings",
+  "findings": "70% stenosis in the left anterior descending (LAD) artery.",
+  "outcome": "Proceeding to percutaneous coronary intervention.",
+  "status": "completed",
+  "notes": "No immediate procedural complications.",
+  "created_at": "2026-02-24T09:00:00Z",
+  "updated_at": "2026-02-24T09:00:00Z"
+},
+{
+  "id": "proc-002",
+  "patient_id": "p2",
+  "procedure_name": "Percutaneous Coronary Intervention (PCI) with Drug-Eluting Stent Placement",
+  "procedure_date": "2022-06-16",
+  "doctor_id": "d1",
+  "indication": "Significant LAD artery stenosis",
+  "findings": "Successful stent deployment with restored TIMI grade 3 flow.",
+  "outcome": "Improved coronary blood flow. Patient stable post-procedure.",
+  "status": "completed",
+  "notes": "Dual antiplatelet therapy initiated post-procedure.",
+  "created_at": "2026-02-24T09:10:00Z",
+  "updated_at": "2026-02-24T09:10:00Z"
+},
+{
+  "id": "proc-003",
+  "patient_id": "p2",
+  "procedure_name": "Transthoracic Echocardiogram",
+  "procedure_date": "2026-02-24",
+  "doctor_id": "d1",
+  "indication": "Evaluation of chest pain and cardiac function",
+  "findings": "Mild left ventricular hypertrophy. Left ventricular ejection fraction (LVEF) approximately 50%. No significant valvular abnormalities.",
+  "outcome": "Medical management continued. No urgent intervention required.",
+  "status": "completed",
+  "notes": "Recommend repeat echo in 6-12 months for monitoring.",
+  "created_at": "2026-02-24T09:30:00Z",
+  "updated_at": "2026-02-24T09:30:00Z"
+}
+]

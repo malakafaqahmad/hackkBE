@@ -24,5 +24,57 @@
     "notes": "Total cholesterol within acceptable range.",
     "created_at": "2026-02-03T08:22:10Z",
     "updated_at": "2026-02-03T08:22:10Z"
-  }
+  },
+  {
+  "id": "lab-003",
+  "patient_id": "p2",
+  "test_name": "High-Sensitivity Troponin I",
+  "result": "0.18",
+  "unit": "ng/mL",
+  "reference_range": "0.00-0.04",
+  "date_conducted": "2026-02-24",
+  "doctor_id": "d1",
+  "notes": "Elevated troponin level suggestive of myocardial injury. Clinical correlation required.",
+  "created_at": "2026-02-24T08:10:00Z",
+  "updated_at": "2026-02-24T08:10:00Z"
+},
+{
+  "id": "lab-004",
+  "patient_id": "p2",
+  "test_name": "Lipid Panel - Total Cholesterol",
+  "result": "245",
+  "unit": "mg/dL",
+  "reference_range": "<200",
+  "date_conducted": "2026-02-20",
+  "doctor_id": "d1",
+  "notes": "Elevated total cholesterol. Increased cardiovascular risk. Statin therapy recommended.",
+  "created_at": "2026-02-20T08:22:10Z",
+  "updated_at": "2026-02-24T08:22:10Z"
+},
+ {
+  "id": "lab-005",
+  "patient_id": "p3",
+  "test_name": "High-Sensitivity Troponin I",
+  "result": "0.18",
+  "unit": "ng/mL",
+  "reference_range": "0.00-0.04",
+  "date_conducted": "2026-02-24",
+  "doctor_id": "d1",
+  "notes": "Elevated troponin level suggestive of myocardial injury. Clinical correlation required.",
+  "created_at": "2026-02-24T08:10:00Z",
+  "updated_at": "2026-02-24T08:10:00Z"
+},
+{
+  "id": "lab-006",
+  "patient_id": "p3",
+  "test_name": "Lipid Panel - Total Cholesterol",
+  "result": "245",
+  "unit": "mg/dL",
+  "reference_range": "<200",
+  "date_conducted": "2026-02-20",
+  "doctor_id": "d1",
+  "notes": "Elevated total cholesterol. Increased cardiovascular risk. Statin therapy recommended.",
+  "created_at": "2026-02-20T08:22:10Z",
+  "updated_at": "2026-02-24T08:22:10Z"
+}
 ]

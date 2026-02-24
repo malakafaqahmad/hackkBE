@@ -16,7 +16,7 @@ else:
         except ImportError:
             PdfReader = None
 
-base_url = "http://127.0.0.1:8000"
+base_url = "http://0.0.0.0:8000"
 
 class MedGemmaClient:
     """

@@ -39,66 +39,59 @@ YOUR ROLE:
 - Review nutritional adherence to dietary requirements
 - Identify any concerning patterns or deviations
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "date": "YYYY-MM-DD",
-    "medication_adherence": {
-        "total_prescribed": integer,
-        "total_taken": integer,
-        "missed": integer,
-        "adherence_rate_percent": float,
-        "missed_medications": [{"name": "string", "prescribed_time": "string"}],
-        "timing_accuracy": "excellent/good/fair/poor"
-    },
-    "vitals_summary": {
-        "blood_pressure": {
-            "systolic": integer,
-            "diastolic": integer,
-            "status": "normal/elevated/stage1_hypertension/stage2_hypertension/crisis"
-        },
-        "heart_rate": {
-            "bpm": integer,
-            "status": "normal/bradycardia/tachycardia"
-        },
-        "blood_glucose": {
-            "value_mg_dl": float,
-            "status": "in_range/hypoglycemia/hyperglycemia"
-        },
-        "temperature": {
-            "value_f": float,
-            "status": "normal/fever/hypothermia"
-        },
-        "weight_lbs": float,
-        "oxygen_saturation": integer,
-        "alerts": ["list of vital sign concerns"]
-    },
-    "symptoms_reported": [
-        {
-            "symptom": "string",
-            "severity": "mild/moderate/severe",
-            "time_reported": "HH:MM",
-            "requires_attention": boolean
-        }
-    ],
-    "exercise_completed": boolean,
-    "exercise_details": {
-        "minutes": integer,
-        "type": "string",
-        "intensity": "low/moderate/high",
-        "meets_goal": boolean
-    },
-    "nutrition_summary": {
-        "diet_adherence": "excellent/good/fair/poor",
-        "total_calories": float,
-        "sodium_g": float,
-        "sugar_g": float,
-        "dietary_concerns": ["concerns related to patient conditions"],
-        "medication_food_interactions": ["any interactions noted"]
-    },
-    "overall_day_status": "excellent/good/concerning/critical",
-    "key_observations": ["important clinical notes"],
-    "requires_immediate_attention": boolean
-}
+OUTPUT FORMAT (Daily Clinical Health Report):
+Please provide the daily analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# CLINICAL DAILY MONITORING REPORT
+**Date:** [YYYY-MM-DD]
+**Overall Day Status:** [Excellent/Good/Concerning/Critical]
+**Immediate Attention Required:** [YES/NO]
+
+## 1. MEDICATION ADHERENCE
+- **Adherence Rate:** [X]% ([X] Taken / [X] Prescribed)
+- **Missed Doses:** [X]
+- **Timing Accuracy:** [Excellent/Good/Fair/Poor]
+- **Missed Medications Detail:**
+    - [Name] (Scheduled for [Time])
+    - [Name] (Scheduled for [Time])
+
+## 2. VITAL SIGNS SUMMARY
+
+- **Blood Pressure:** [Systolic]/[Diastolic] mmHg | Status: [Normal/Elevated/Stage 1/Stage 2/Crisis]
+- **Heart Rate:** [BPM] | Status: [Normal/Bradycardia/Tachycardia]
+- **Blood Glucose:** [Value] mg/dL | Status: [In-range/Hypoglycemia/Hyperglycemia]
+- **Temperature:** [Value]°F | Status: [Normal/Fever/Hypothermia]
+- **Other Metrics:** Weight: [Value] lbs | Oxygen Saturation: [X]%
+- **Vitals Alerts:**
+    - [List specific vital sign concerns or "None"]
+
+## 3. SYMPTOMS LOG
+(For each reported symptom:)
+- **[Symptom Name]:** [Severity: Mild/Moderate/Severe] at [Time]
+- **Requires Clinical Attention:** [Yes/No]
+
+## 4. EXERCISE & ACTIVITY
+- **Completed:** [Yes/No]
+- **Details:** [Minutes] mins of [Type]
+- **Intensity:** [Low/Moderate/High]
+- **Meets Daily Goal:** [Yes/No]
+
+## 5. NUTRITION & DIETARY ADHERENCE
+
+
+[Image of the Healthy Eating Plate]
+
+- **Diet Adherence:** [Excellent/Good/Fair/Poor]
+- **Nutritional Data:** [Calories] kcal | [Sodium] g | [Sugar] g
+- **Dietary Concerns:** [List concerns related to patient conditions]
+- **Medication-Food Interactions:** [List any noted interactions]
+
+## 6. CLINICAL OBSERVATIONS
+- **Key Observations:**
+    - [Important note 1]
+    - [Important note 2]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Cross-reference medications with patient's conditions
@@ -151,67 +144,66 @@ YOUR ROLE:
 - Assess nutritional patterns and dietary adherence
 - Compare to previous week for trajectory analysis
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "week_start": "YYYY-MM-DD",
-    "week_end": "YYYY-MM-DD",
-    "medication_adherence": {
-        "weekly_adherence_rate": float,
-        "trend": "improving/stable/declining",
-        "missed_doses_count": integer,
-        "most_missed_medication": "string",
-        "pattern_identified": "string (e.g., 'tends to miss evening doses')"
-    },
-    "vitals_trends": {
-        "blood_pressure": {
-            "average_systolic": float,
-            "average_diastolic": float,
-            "trend": "improving/stable/worsening",
-            "variability": "low/moderate/high"
-        },
-        "heart_rate_avg": float,
-        "blood_glucose": {
-            "average": float,
-            "in_range_percentage": float,
-            "trend": "improving/stable/worsening"
-        },
-        "weight_change_lbs": float,
-        "overall_vitals_status": "improving/stable/concerning"
-    },
-    "symptoms_analysis": {
-        "new_symptoms": ["symptoms that appeared this week"],
-        "recurring_symptoms": [{"symptom": "string", "frequency": integer, "avg_severity": "string"}],
-        "resolved_symptoms": ["symptoms that cleared"],
-        "symptom_frequency_map": {"symptom_name": frequency_count},
-        "concerning_patterns": ["patterns requiring attention"]
-    },
-    "exercise_compliance": {
-        "days_exercised": integer,
-        "total_minutes": integer,
-        "average_minutes_per_day": float,
-        "compliance_rate": float,
-        "consistency": "excellent/good/fair/poor",
-        "trend": "improving/stable/declining"
-    },
-    "nutrition_patterns": {
-        "average_daily_calories": float,
-        "average_sodium_g": float,
-        "average_sugar_g": float,
-        "dietary_consistency": "excellent/good/fair/poor",
-        "days_met_dietary_goals": integer,
-        "primary_concerns": ["list concerns"]
-    },
-    "comparison_to_previous_week": {
-        "medication_adherence_change": "improved/same/worsened",
-        "vitals_trajectory": "improved/same/worsened",
-        "symptom_burden_change": "decreased/same/increased",
-        "exercise_change": "increased/same/decreased",
-        "overall_week_comparison": "string summary"
-    },
-    "weekly_score": float (0-100),
-    "key_insights": ["important weekly observations"],
-    "concerns_requiring_attention": ["issues to address"]
-}
+OUTPUT FORMAT (Structured Weekly Health Trend Report):
+Please provide the weekly analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# WEEKLY HEALTH TREND REPORT
+**Reporting Period:** [YYYY-MM-DD] to [YYYY-MM-DD]
+**Weekly Health Score:** [0-100]
+**Overall Status:** [Improving/Stable/Concerning]
+
+## 1. EXECUTIVE INSIGHTS
+- **Key Insights:** [List the most important observations from the week]
+- **Critical Concerns:** [List any issues requiring immediate attention]
+
+## 2. MEDICATION ADHERENCE TRENDS
+
+- **Weekly Adherence Rate:** [X]% (Trend: [Improving/Stable/Declining])
+- **Dose Tracking:** [X] Missed Doses
+- **Primary Barrier:** Most missed medication: [Name]
+- **Behavioral Pattern:** [e.g., "Tends to miss evening doses on weekends"]
+
+## 3. VITAL SIGNS & PHYSIOLOGICAL DATA
+
+- **Blood Pressure Trend:** - Average: [Systolic]/[Diastolic] mmHg
+    - Status: [Improving/Stable/Worsening] | Variability: [Low/Moderate/High]
+- **Blood Glucose Trend:**
+    - Average: [Value] | In-Range: [X]%
+    - Status: [Improving/Stable/Worsening]
+- **Other Metrics:**
+    - Average Heart Rate: [BPM]
+    - Weekly Weight Change: [+/- X] lbs
+- **Vitals Trajectory Status:** [Improving/Stable/Concerning]
+
+## 4. SYMPTOM PATTERN ANALYSIS
+- **New Symptoms This Week:** [List symptoms or "None"]
+- **Resolved Symptoms:** [List symptoms that cleared]
+- **Recurring Symptoms & Frequency:**
+    - [Symptom Name]: [X] occurrences | Avg Severity: [Mild/Moderate/Severe]
+- **Frequency Map:** [List symptoms and their total weekly count]
+- **Concerning Clinical Patterns:** [List any patterns requiring medical attention]
+
+## 5. LIFESTYLE & BEHAVIORAL COMPLIANCE
+- **Exercise & Activity:**
+    - Days Active: [X]/7 | Total Minutes: [X]
+    - Daily Average: [X] mins | Compliance Rate: [X]%
+    - Consistency: [Excellent/Good/Fair/Poor] | Trend: [Improving/Stable/Declining]
+- **Nutritional Patterns:**
+    - Avg Daily Calories: [X] kcal
+    - Avg Sodium: [X] g | Avg Sugar: [X] g
+    - Dietary Consistency: [Excellent/Good/Fair/Poor]
+    - Goals Met: [X]/7 Days
+    - Primary Dietary Concerns: [List concerns]
+
+## 6. WEEK-OVER-WEEK COMPARISON
+
+- **Adherence Change:** [Improved/Same/Worsened]
+- **Vitals Trajectory:** [Improved/Same/Worsened]
+- **Symptom Burden Change:** [Decreased/Same/Increased]
+- **Activity Level Change:** [Increased/Same/Decreased]
+- **Comparative Summary:** [Provide a narrative summary comparing this week to the previous one]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Calculate accurate statistics across 7 days
@@ -265,86 +257,75 @@ YOUR ROLE:
 - Compare to previous month for trajectory analysis
 - Provide strategic clinical insights
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "month_start": "YYYY-MM-DD",
-    "month_end": "YYYY-MM-DD",
-    "medication_adherence": {
-        "monthly_adherence_rate": float,
-        "trend_across_month": "improving/stable/declining/fluctuating",
-        "total_missed_doses": integer,
-        "adherence_by_medication": [{"medication": "string", "rate": float}],
-        "barriers_identified": ["identified reasons for non-adherence"],
-        "adherence_pattern": "consistent/weekend_dips/sporadic/declining"
-    },
-    "vitals_analysis": {
-        "blood_pressure": {
-            "monthly_average_systolic": float,
-            "monthly_average_diastolic": float,
-            "trend": "improving/stable/worsening",
-            "control_status": "well_controlled/poorly_controlled",
-            "days_out_of_range": integer
-        },
-        "blood_glucose": {
-            "monthly_average": float,
-            "time_in_range_percent": float,
-            "glycemic_control": "excellent/good/fair/poor",
-            "trend": "improving/stable/worsening"
-        },
-        "weight": {
-            "starting_weight": float,
-            "ending_weight": float,
-            "change_lbs": float,
-            "trend": "losing/stable/gaining",
-            "clinically_significant": boolean
-        },
-        "overall_vitals_trajectory": "improving/stable/deteriorating"
-    },
-    "symptoms_longitudinal": {
-        "chronic_symptoms": [{"symptom": "string", "days_present": integer, "trend": "string"}],
-        "intermittent_symptoms": [{"symptom": "string", "occurrences": integer}],
-        "new_onset_symptoms": ["symptoms that appeared this month"],
-        "resolved_symptoms": ["symptoms that cleared"],
-        "symptom_burden_score": float (0-100),
-        "symptom_impact_on_quality_of_life": "minimal/moderate/significant/severe"
-    },
-    "lifestyle_metrics": {
-        "exercise": {
-            "total_days_exercised": integer,
-            "total_minutes": integer,
-            "monthly_compliance_rate": float,
-            "consistency_score": float,
-            "trend": "improving/stable/declining"
-        },
-        "nutrition": {
-            "average_daily_calories": float,
-            "average_sodium_g": float,
-            "average_sugar_g": float,
-            "days_met_dietary_goals": integer,
-            "dietary_compliance_rate": float,
-            "nutritional_quality_score": float
-        }
-    },
-    "disease_progression": {
-        "overall_trajectory": "improving/stable/progressing",
-        "control_status": "excellent/good/fair/poor",
-        "clinical_stability": "stable/unstable",
-        "treatment_response": "excellent/good/partial/poor",
-        "progression_indicators": ["specific indicators"]
-    },
-    "comparison_to_previous_month": {
-        "medication_adherence_change": float,
-        "vitals_change": "improved/same/worsened",
-        "symptom_burden_change": "decreased/same/increased",
-        "lifestyle_change": "improved/same/worsened",
-        "overall_health_trajectory": "string summary"
-    },
-    "monthly_health_score": float (0-100),
-    "quality_of_life_assessment": "excellent/good/fair/poor",
-    "strategic_insights": ["long-term observations and recommendations"],
-    "areas_of_concern": ["issues requiring clinical attention"],
-    "positive_achievements": ["improvements and successes"]
-}
+OUTPUT FORMAT (Structured Monthly Trajectory Report):
+Please provide the analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# MONTHLY CLINICAL TRAJECTORY REPORT
+**Reporting Period:** [YYYY-MM-DD] to [YYYY-MM-DD]
+**Monthly Health Score:** [0-100]
+**Quality of Life Assessment:** [Excellent/Good/Fair/Poor]
+
+## 1. STRATEGIC CLINICAL OVERVIEW
+- **Strategic Insights:** [Long-term observations and recommendations]
+- **Positive Achievements:** [List improvements and successes from the month]
+- **Areas of Concern:** [Issues requiring clinical attention or adjustment]
+
+## 2. LONG-TERM MEDICATION ADHERENCE
+- **Monthly Adherence Rate:** [X]% 
+- **Adherence Trend:** [Improving/Stable/Declining/Fluctuating]
+- **Total Missed Doses:** [X]
+- **Adherence Pattern:** [Consistent/Weekend dips/Sporadic/Declining]
+- **Medication Breakdown:**
+    - [Medication Name]: [X]% Adherence Rate
+- **Barrier Analysis:** [List identified reasons for non-adherence]
+
+## 3. PHYSIOLOGICAL TREND ANALYSIS (30-DAY)
+### Cardiovascular & Metabolic Trends
+- **Blood Pressure:**
+    - Monthly Avg: [Systolic]/[Diastolic] mmHg
+    - Status: [Well-controlled/Poorly-controlled] | Trend: [X]
+    - Days Out of Range: [X]
+- **Blood Glucose:**
+    - Monthly Avg: [Value] | Time in Range: [X]%
+    - Glycemic Control: [Excellent/Good/Fair/Poor] | Trend: [X]
+- **Weight Tracking:**
+    - Starting: [Value] lbs → Ending: [Value] lbs (Change: [+/- X] lbs)
+    - Trend: [Losing/Stable/Gaining] | Clinically Significant: [Yes/No]
+
+**Overall Vitals Trajectory:** [Improving/Stable/Deteriorating]
+
+## 4. SYMPTOM BURDEN & EVOLUTION
+- **Symptom Burden Score:** [0-100] | **QoL Impact:** [Minimal/Moderate/Significant/Severe]
+- **Chronic Symptoms:** [Symptom Name] ([X] days present) - Trend: [X]
+- **Intermittent Symptoms:** [Symptom Name] ([X] occurrences)
+- **Resolved Symptoms:** [List symptoms that cleared during this month]
+- **New Onset Symptoms:** [List any symptoms that first appeared this month]
+
+## 5. LIFESTYLE & BEHAVIORAL CONSISTENCY
+### Exercise Metrics
+- **Activity Level:** [X] total days | [X] total minutes
+- **Compliance Rate:** [X]% | Consistency Score: [0-100]
+- **Trend:** [Improving/Stable/Declining]
+### Nutritional Quality
+- **Daily Averages:** [Calories] kcal | [Sodium] g | [Sugar] g
+- **Compliance:** [X] days met goals | Compliance Rate: [X]%
+- **Nutritional Quality Score:** [0-100]
+
+## 6. DISEASE PROGRESSION & STABILITY
+- **Overall Trajectory:** [Improving/Stable/Progressing]
+- **Control Status:** [Excellent/Good/Fair/Poor]
+- **Clinical Stability:** [Stable/Unstable]
+- **Treatment Response:** [Excellent/Good/Partial/Poor]
+- **Progression Indicators:** [List specific indicators observed]
+
+## 7. MONTH-OVER-MONTH COMPARISON
+- **Adherence Change:** [+/- X]% vs Previous Month
+- **Vitals Change:** [Improved/Same/Worsened]
+- **Symptom Burden Change:** [Decreased/Same/Increased]
+- **Lifestyle Change:** [Improved/Same/Worsened]
+- **Health Trajectory Summary:** [Summary of how this month compared to last]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Focus on sustained trends, not daily fluctuations
@@ -354,9 +335,6 @@ ANALYSIS GUIDELINES:
 5. Evaluate quality of life impact
 6. Consider seasonal or cyclical factors
 7. Provide strategic, actionable insights
-
-you must not include any explanatory text, only return the valid JSON object as specified
-you must not add facts that are not present in the logs, only analyze the data given and return insights based on that data
 """
 
     user_prompt = f"""Analyze monthly health trajectory for patient {patient_id}:

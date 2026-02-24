@@ -35,237 +35,90 @@ YOUR ROLE:
 - Quantify deviation magnitude and clinical significance
 - Provide corrective recommendations to realign trajectory
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "analysis_timestamp": "YYYY-MM-DD HH:MM:SS",
-    "patient_id": "string",
-    "deviation_analysis": {
-        "overall_deviation_status": "on_track/minor_deviation/significant_deviation/critical_deviation",
-        "deviation_severity_score": float (0-100, higher = worse deviation),
-        "trajectory_comparison": {
-            "forecast_direction": "improving/stable/declining",
-            "actual_direction": "improving/stable/declining",
-            "alignment": "aligned/partially_aligned/misaligned",
-            "alignment_percentage": float (0-100)
-        },
-        "deviation_onset": "YYYY-MM-DD (when divergence began)",
-        "time_since_deviation": "string (e.g., '2 weeks')"
-    },
-    
-    "identified_deviations": [
-        {
-            "parameter": "string (e.g., blood_pressure, medication_adherence, symptom_burden)",
-            "domain": "vitals/medication/lifestyle/symptoms/labs",
-            "forecasted_value": "string/number",
-            "actual_value": "string/number",
-            "deviation_magnitude": float,
-            "deviation_percentage": float,
-            "deviation_direction": "better_than_expected/worse_than_expected",
-            "clinical_significance": "critical/high/moderate/low/negligible",
-            "time_of_divergence": "YYYY-MM-DD",
-            "trend_since_divergence": "widening_gap/stable_gap/narrowing_gap"
-        }
-    ],
-    
-    "root_cause_analysis": {
-        "primary_factors": [
-            {
-                "factor": "string (e.g., medication_non_adherence, dietary_changes, new_stressor)",
-                "factor_type": "behavioral/clinical/environmental/social",
-                "contribution_weight": float (0-100, sum to 100 for all primary factors),
-                "evidence": [
-                    "specific data points supporting this factor"
-                ],
-                "how_it_affected": "Detailed mechanism of how this factor caused deviation",
-                "modifiable": boolean,
-                "onset_date": "YYYY-MM-DD"
-            }
-        ],
-        "secondary_factors": [
-            {
-                "factor": "string",
-                "contribution_weight": float,
-                "evidence": ["list"],
-                "interaction_with_primary": "string (how secondary factors amplified primary)"
-            }
-        ],
-        "external_factors": [
-            {
-                "factor": "string (unexpected events, environmental changes)",
-                "impact": "significant/moderate/minor",
-                "predictability": "unpredictable/difficult_to_predict/could_have_been_predicted"
-            }
-        ],
-        "cascade_effects": [
-            {
-                "initiating_factor": "string",
-                "sequence": ["step1", "step2", "step3"],
-                "final_impact": "string"
-            }
-        ]
-    },
-    
-    "behavioral_analysis": {
-        "medication_adherence_impact": {
-            "forecasted_adherence": float,
-            "actual_adherence": float,
-            "adherence_gap": float,
-            "clinical_impact": "string (how non-adherence affected outcomes)",
-            "contribution_to_deviation": "major/moderate/minor/none",
-            "specific_medications_missed": [
-                {
-                    "medication": "string",
-                    "criticality": "critical/high/moderate",
-                    "missed_doses": integer,
-                    "therapeutic_impact": "string"
-                }
-            ]
-        },
-        "lifestyle_compliance_impact": {
-            "expected_lifestyle_score": float,
-            "actual_lifestyle_score": float,
-            "lifestyle_gap": float,
-            "key_gaps": [
-                {
-                    "area": "exercise/nutrition/sleep/stress",
-                    "expected": "string",
-                    "actual": "string",
-                    "impact": "string"
-                }
-            ],
-            "contribution_to_deviation": "major/moderate/minor/none"
-        },
-        "symptom_evolution": {
-            "expected_symptom_trajectory": "string",
-            "actual_symptom_trajectory": "string",
-            "unexpected_symptoms": [
-                {
-                    "symptom": "string",
-                    "onset": "YYYY-MM-DD",
-                    "why_unexpected": "string",
-                    "impact_on_outcome": "string"
-                }
-            ],
-            "contribution_to_deviation": "major/moderate/minor/none"
-        }
-    },
-    
-    "temporal_divergence_map": {
-        "divergence_timeline": [
-            {
-                "date": "YYYY-MM-DD",
-                "event": "string (what happened)",
-                "parameter_affected": "string",
-                "deviation_magnitude_at_time": float,
-                "cumulative_impact": "string"
-            }
-        ],
-        "acceleration_points": [
-            {
-                "date": "YYYY-MM-DD",
-                "description": "What caused deviation to worsen",
-                "impact": "string"
-            }
-        ],
-        "improvement_points": [
-            {
-                "date": "YYYY-MM-DD",
-                "description": "What caused deviation to reduce",
-                "why_insufficient": "string (if still deviated overall)"
-            }
-        ],
-        "critical_junctures": [
-            "Moments where intervention could have prevented deviation"
-        ]
-    },
-    
-    "mechanism_explanation": {
-        "why_diverged": "Comprehensive narrative explaining the ROOT CAUSES of why patient diverged from forecast. Address psychological, behavioral, clinical, and environmental factors.",
-        "how_diverged": "Step-by-step chronological explanation of HOW the deviation developed from the initial trigger through intermediate effects to final outcome.",
-        "cascade_effects_narrative": "Explanation of how one deviation led to another in a cascade",
-        "missed_forecast_assumptions": [
-            {
-                "assumption": "string (what forecast assumed would happen)",
-                "reality": "string (what actually happened)",
-                "why_assumption_failed": "string"
-            }
-        ],
-        "contributing_complexities": [
-            "Unexpected interactions or complexities that contributed to deviation"
-        ]
-    },
-    
-    "comparison_to_forecast": {
-        "vitals_comparison": [
-            {
-                "vital": "string",
-                "forecasted": "string",
-                "actual": "string",
-                "deviation_explanation": "string"
-            }
-        ],
-        "medication_efficacy_comparison": {
-            "forecasted_efficacy": float,
-            "actual_efficacy": float,
-            "explanation": "string"
-        },
-        "risk_actualization": [
-            {
-                "forecasted_risk": "string",
-                "probability_forecasted": float,
-                "occurred": boolean,
-                "if_occurred_why": "string",
-                "if_not_occurred_why": "string"
-            }
-        ]
-    },
-    
-    "corrective_insights": {
-        "modifiable_factors": [
-            {
-                "factor": "string",
-                "how_to_modify": "string",
-                "expected_impact": "significant/moderate/modest",
-                "feasibility": "easy/moderate/difficult",
-                "priority": "high/medium/low"
-            }
-        ],
-        "intervention_opportunities": [
-            {
-                "intervention": "string",
-                "target": "string (what it addresses)",
-                "expected_realignment": "string (how it will help)",
-                "urgency": "immediate/prompt/routine"
-            }
-        ],
-        "predicted_realignment_timeline": {
-            "if_interventions_implemented": "string (when expect to realign)",
-            "without_intervention": "string (continued trajectory)",
-            "confidence": float
-        },
-        "barriers_to_realignment": [
-            {
-                "barrier": "string",
-                "severity": "major/moderate/minor",
-                "mitigation_strategy": "string"
-            }
-        ]
-    },
-    
-    "if_no_action_projection": {
-        "1_week_projection": "string (what happens if no changes)",
-        "1_month_projection": "string",
-        "3_months_projection": "string",
-        "worst_case_scenario": "string",
-        "probability_of_adverse_outcome": float
-    },
-    
-    "lessons_learned": [
-        "Insights for improving future forecasts based on this deviation"
-    ],
-    
-    "differential_reasoning_summary": "Concise 4-6 sentence summary for clinicians explaining: (1) What deviated, (2) Why it deviated, (3) How it deviated, (4) What to do about it"
-}
+OUTPUT FORMAT (Structured Trajectory Variance Report):
+Please provide the analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# CLINICAL DEVIATION ANALYSIS REPORT
+**Analysis Timestamp:** [YYYY-MM-DD HH:MM:SS]
+**Patient ID:** [string]
+
+## 1. DEVIATION OVERVIEW
+- **Overall Deviation Status:** [on_track/minor/significant/critical]
+- **Deviation Severity Score:** [0-100]
+- **Trajectory Comparison:**
+    - Forecast Direction: [improving/stable/declining]
+    - Actual Direction: [improving/stable/declining]
+    - Alignment: [Alignment %] ([Status])
+- **Onset & Duration:** Divergence began on [Date] ([Time elapsed since])
+
+## 2. IDENTIFIED PARAMETER DEVIATIONS
+(For each identified deviation, provide:)
+### Parameter: [e.g., Blood Pressure]
+- **Domain:** [vitals/medication/lifestyle/etc.]
+- **Comparison:** Forecasted [Value] vs. Actual [Value]
+- **Variance:** [Magnitude] ([Percentage]%) | Direction: [Better/Worse than expected]
+- **Clinical Significance:** [critical/high/moderate/low/negligible]
+- **Timeline:** Diverged on [Date] | Trend: [widening/stable/narrowing gap]
+
+## 3. ROOT CAUSE ANALYSIS (RCA)
+### Primary Factors
+- **[Factor Name]:** ([Type]) - Weight: [X]%
+    - **Evidence:** [Supporting data points]
+    - **Mechanism:** [Detailed explanation of how this factor caused the deviation]
+    - **Modifiable:** [Yes/No] | Onset: [Date]
+
+### Secondary & External Factors
+- **Secondary:** [Factor] (Weight: X%) | Interaction with Primary: [Explanation]
+- **External/Environmental:** [Factor] | Impact: [Level] | Predictability: [Level]
+
+### Cascade Effects
+- **Initiating Trigger:** [Factor]
+- **Sequence of Events:** [Step 1] → [Step 2] → [Step 3]
+- **Final Impact:** [Outcome]
+
+## 4. BEHAVIORAL & SYMPTOM IMPACT
+- **Medication Adherence Gap:** [Forecast %] vs [Actual %] ([Impact level])
+    - *Specific Missed Meds:* [Medication] ([Criticality]) - [Doses missed] → [Impact]
+- **Lifestyle Compliance:** [Gap Score] (Expected vs Actual)
+    - *Key Gaps:* [Area: e.g., Sleep] - [Expected vs Actual] → [Impact]
+- **Symptom Evolution:** [Expected vs Actual Trajectory]
+    - *Unexpected Symptoms:* [Symptom] (Onset: Date) - [Why unexpected/Impact]
+
+## 5. TEMPORAL DIVERGENCE MAP
+- **Chronological Timeline:**
+    - [Date]: [Event] | Parameter: [X] | Magnitude: [Y] | Cumulative Impact: [Z]
+- **Acceleration Points:** [Date] - [What caused worsening]
+- **Improvement/Correction Points:** [Date] - [What helped] | [Why insufficient if still deviated]
+- **Critical Junctures:** [List moments where intervention could have prevented deviation]
+
+## 6. MECHANISM NARRATIVE (WHY & HOW)
+- **The "Why" (Root Causes):** [Comprehensive narrative addressing psychological, behavioral, and clinical factors]
+- **The "How" (Process):** [Step-by-step chronological explanation of development]
+- **Missed Forecast Assumptions:**
+    - *Assumption:* [X] | *Reality:* [Y] | *Failure Reason:* [Z]
+- **Contributing Complexities:** [Unexpected interactions]
+
+## 7. CORRECTIVE INSIGHTS & PROJECTIONS
+### Intervention Strategy
+- **Modifiable Factors:** [Factor] | Action: [How to modify] | Priority: [H/M/L]
+- **Opportunities:** [Intervention] | Target: [X] | Expected Realignment: [Y]
+
+### Realignment Timeline
+- **With Intervention:** [Expected realignment date]
+- **Without Intervention:** [Continued trajectory description]
+- **Barriers:** [Barrier] | Severity: [Level] | Mitigation: [Strategy]
+
+### "No Action" Projections
+- **1 Week:** [Projection]
+- **1 Month:** [Projection]
+- **3 Months:** [Projection]
+- **Worst Case:** [Description] | Probability of Adverse Outcome: [X]%
+
+## 8. CLINICAL SUMMARY
+- **Lessons Learned:** [Insights for future forecasting]
+- **Differential Reasoning Summary:** [4-6 sentence summary explaining What, Why, How, and next steps]
+
+---
 
 ANALYSIS GUIDELINES:
 
@@ -312,23 +165,6 @@ ANALYSIS GUIDELINES:
    - Prioritize high-impact interventions
    - Address root causes, not just symptoms
    - Provide realistic timeline for realignment
-
-EXAMPLE SCENARIO:
-Forecast: "BP should decrease to 125/80 with 90% adherence"
-Actual: "BP is 145/95 with 65% adherence"
-
-Root Cause Analysis:
-- Primary (70%): Medication non-adherence due to work stress
-- Secondary (20%): Stopped exercise due to knee pain
-- Tertiary (10%): Increased sodium from comfort eating
-
-Mechanism:
-Week 1: Job stress → missed evening medication doses
-Week 2: BP started rising → felt okay, so continued pattern
-Week 3: Knee pain began → stopped exercise → less stress relief
-Week 4: Stress + no exercise → comfort eating (high sodium)
-Result: 65% adherence + no exercise + high sodium = BP 145/95
-
 """
 
     user_prompt = f"""Perform comprehensive deviation analysis for patient {patient_id}:

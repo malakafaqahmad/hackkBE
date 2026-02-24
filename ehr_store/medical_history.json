@@ -18,5 +18,46 @@
     "notes": "Surgery successful, no complications.",
     "created_at": "2026-01-28T08:06:00Z",
     "updated_at": "2026-01-28T08:06:00Z"
-  }
+  },
+  {
+  "id": "mh-003",
+  "patient_id": "p2",
+  "condition": "Coronary Artery Disease (CAD)",
+  "diagnosis_date": "2022-06-14",
+  "status": "Chronic",
+  "notes": "Diagnosed after episode of unstable angina. Coronary angiography revealed 70% stenosis in left anterior descending artery. Managed with dual antiplatelet therapy, statins, beta-blockers, and lifestyle modification.",
+  "created_at": "2026-02-24T08:05:00Z",
+  "updated_at": "2026-02-24T08:05:00Z"
+},
+{
+  "id": "mh-004",
+  "patient_id": "p2",
+  "condition": "Percutaneous Coronary Intervention (PCI) with Stent Placement",
+  "diagnosis_date": "2022-06-16",
+  "status": "Resolved",
+  "notes": "Drug-eluting stent placed in LAD artery. Procedure successful with no immediate complications. On long-term antiplatelet therapy.",
+  "created_at": "2026-02-24T08:06:00Z",
+  "updated_at": "2026-02-24T08:06:00Z"
+},
+  {
+  "id": "mh-005",
+  "patient_id": "p3",
+  "condition": "Coronary Artery Disease (CAD)",
+  "diagnosis_date": "2022-06-14",
+  "status": "Chronic",
+  "notes": "Diagnosed after episode of unstable angina. Coronary angiography revealed 70% stenosis in left anterior descending artery. Managed with dual antiplatelet therapy, statins, beta-blockers, and lifestyle modification.",
+  "created_at": "2026-02-24T08:05:00Z",
+  "updated_at": "2026-02-24T08:05:00Z"
+},
+{
+  "id": "mh-006",
+  "patient_id": "p3",
+  "condition": "Percutaneous Coronary Intervention (PCI) with Stent Placement",
+  "diagnosis_date": "2022-06-16",
+  "status": "Resolved",
+  "notes": "Drug-eluting stent placed in LAD artery. Procedure successful with no immediate complications. On long-term antiplatelet therapy.",
+  "created_at": "2026-02-24T08:06:00Z",
+  "updated_at": "2026-02-24T08:06:00Z"
+}
+
 ]

@@ -73,6 +73,7 @@ def report_updater(patient_id: str, conversation_history: list = None, current_r
         DO NOT include any introductory phrases, explanations, or any text other than the report itself.
         </output_format>
         <must_not_do>
+        you shall never add anything from yourself that is not stated in the interview like donot add patient denies something if its not in the interview or answered by the patient 
         Do not add any information that is not explicitly stated in the interview or EHR. Do not make assumptions or inferences beyond the provided data.
         if the user has not answered a question dont not presume an answer. For example, if the user has not answered a question about smoking history, do not include any information about smoking in the report.
         </must_not_do>

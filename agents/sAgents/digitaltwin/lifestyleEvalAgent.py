@@ -26,121 +26,88 @@ YOUR ROLE:
 - Provide evidence-based behavior change recommendations
 - Track lifestyle trends and consistency
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "lifestyle_assessment": {
-        "exercise": {
-            "weekly_minutes": integer,
-            "days_per_week": integer,
-            "consistency_score": float (0-100),
-            "intensity_distribution": {
-                "low": float,
-                "moderate": float,
-                "high": float
-            },
-            "meets_recommendations": boolean,
-            "meets_condition_specific_goals": boolean,
-            "trend": "improving/stable/declining",
-            "barriers_identified": ["identified barriers to exercise"],
-            "exercise_quality_score": float (0-100)
-        },
-        "nutrition": {
-            "dietary_quality_score": float (0-100),
-            "average_daily_calories": float,
-            "macronutrient_balance": {
-                "carbs_percent": float,
-                "protein_percent": float,
-                "fat_percent": float,
-                "balance_status": "optimal/acceptable/suboptimal"
-            },
-            "micronutrients": {
-                "sodium_intake": "within_limits/borderline/elevated/excessive",
-                "sugar_intake": "within_limits/borderline/elevated/excessive",
-                "fiber_adequate": boolean
-            },
-            "caloric_balance": "appropriate/excess/deficit",
-            "diet_disease_alignment": {
-                "appropriate_for_conditions": boolean,
-                "concerns": ["dietary concerns related to conditions"],
-                "compliance_with_dietary_restrictions": float (0-100)
-            },
-            "meal_consistency": "regular/irregular/chaotic",
-            "nutritional_trend": "improving/stable/declining"
-        },
-        "sleep": {
-            "average_hours": float,
-            "quality": "excellent/good/fair/poor",
-            "sleep_adequacy": "sufficient/insufficient",
-            "sleep_pattern_consistency": "consistent/variable",
-            "sleep_related_concerns": ["concerns if any"]
-        },
-        "stress_indicators": {
-            "stress_level": "low/moderate/high/severe",
-            "stress_sources": ["identified sources"],
-            "stress_management": "effective/partial/ineffective",
-            "stress_impact_on_health": "minimal/moderate/significant"
-        }
-    },
-    "risk_factors": {
-        "sedentary_behavior": {
-            "risk_level": "low/medium/high",
-            "concern": "string",
-            "related_conditions": ["conditions affected"]
-        },
-        "poor_nutrition": {
-            "risk_level": "low/medium/high",
-            "specific_concerns": ["nutritional risk factors"],
-            "disease_exacerbation_risk": "low/moderate/high"
-        },
-        "inadequate_sleep": {
-            "risk_level": "low/medium/high",
-            "health_impact": "string"
-        },
-        "chronic_stress": {
-            "risk_level": "low/medium/high",
-            "health_impact": "string"
-        },
-        "lifestyle_disease_risk": {
-            "cardiovascular_risk": "low/moderate/high",
-            "metabolic_risk": "low/moderate/high",
-            "overall_lifestyle_risk": float (0-100)
-        }
-    },
-    "lifestyle_disease_correlation": {
-        "lifestyle_impact_on_conditions": [
-            {
-                "condition": "string",
-                "lifestyle_contribution": "significant/moderate/minimal",
-                "modifiable_factors": ["factors that can improve condition"],
-                "current_lifestyle_effect": "positive/neutral/negative"
-            }
-        ],
-        "medication_effectiveness_impact": "enhancing/neutral/undermining"
-    },
-    "behavioral_patterns": {
-        "positive_behaviors": ["health-promoting behaviors to reinforce"],
-        "negative_behaviors": ["health-harming behaviors to address"],
-        "consistency_level": "very_consistent/consistent/inconsistent/very_inconsistent",
-        "motivation_level": "high/moderate/low",
-        "self_efficacy": "high/moderate/low"
-    },
-    "lifestyle_score": float (0-100),
-    "lifestyle_trajectory": "improving/stable/declining",
-    "behavior_change_opportunities": [
-        {
-            "priority": "high/medium/low",
-            "behavior": "string",
-            "current_state": "string",
-            "target_state": "string",
-            "expected_health_impact": "significant/moderate/modest",
-            "difficulty_level": "easy/moderate/challenging",
-            "recommendations": "string"
-        }
-    ],
-    "quick_wins": ["Easy changes with significant impact"],
-    "long_term_goals": ["Challenging but high-impact lifestyle changes"],
-    "summary": "Concise summary of lifestyle status and priorities"
-}
+OUTPUT FORMAT (Structured Lifestyle Optimization Report):
+Please provide the analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# LIFESTYLE & BEHAVIOR OPTIMIZATION REPORT
+**Current Lifestyle Score:** [0-100] | **Trajectory:** [Improving/Stable/Declining]
+
+## 1. EXECUTIVE SUMMARY
+[Provide a concise narrative summary of lifestyle status and the primary priorities for health optimization.]
+
+## 2. COMPREHENSIVE LIFESTYLE ASSESSMENT
+### A. Physical Activity & Exercise
+
+
+[Image of exercise intensity zones]
+
+- **Metrics:** [X] minutes/week | [X] days/week | Consistency: [0-100]%
+- **Intensity Distribution:** Low: [X]% | Moderate: [X]% | High: [X]%
+- **Status:** Meets Recommendations: [Yes/No] | Meets Condition Goals: [Yes/No]
+- **Exercise Quality & Trend:** Score [0-100] | Trend: [X]
+- **Barriers:** [List identified barriers to exercise]
+
+### B. Nutritional Quality
+
+
+[Image of the DASH diet food pyramid]
+
+- **General Quality:** Score [0-100] | Caloric Balance: [Appropriate/Excess/Deficit] ([X] kcal/day)
+- **Macronutrient Balance:** [Carbs: X% | Protein: X% | Fat: X%] | Status: [Optimal/Acceptable/Suboptimal]
+- **Micronutrient Status:**
+    - Sodium: [Level] | Sugar: [Level] | Fiber Adequate: [Yes/No]
+- **Disease Alignment:** Appropriate for Conditions: [Yes/No]
+    - *Concerns:* [List dietary concerns related to conditions]
+    - *Compliance:* [X]% adherence to restrictions
+- **Consistency:** [Regular/Irregular/Chaotic] | Trend: [X]
+
+### C. Sleep & Recovery
+
+- **Quantity:** [X] hours/night | Adequacy: [Sufficient/Insufficient]
+- **Quality & Consistency:** [Excellent/Good/Fair/Poor] | [Consistent/Variable]
+- **Observations:** [List sleep-related concerns or findings]
+
+### D. Stress & Emotional Health
+- **Stress Level:** [Low/Moderate/High/Severe]
+- **Management:** [Effective/Partial/Ineffective]
+- **Sources & Impact:** [List sources] | Impact on Health: [Minimal/Moderate/Significant]
+
+## 3. RISK FACTOR PROFILE
+- **Sedentary Risk:** [Low/Med/High] - [Details] (Affects: [Conditions])
+- **Nutritional Risk:** [Low/Med/High] - [Specific Concerns] (Exacerbation Risk: [Level])
+- **Sleep/Stress Risk:** Sleep: [Level] | Stress: [Level] (Health Impact: [Description])
+- **Projected Disease Risk:**
+    - Cardiovascular: [Level] | Metabolic: [Level]
+    - **Overall Lifestyle Risk Score:** [0-100]
+
+## 4. LIFESTYLE-DISEASE CORRELATION
+(For each condition the patient has:)
+- **Condition: [Name]**
+    - Contribution: [Significant/Moderate/Minimal] | Current Effect: [Positive/Neutral/Negative]
+    - Modifiable Factors: [List factors that can improve this condition]
+- **Medication Synergy:** Lifestyle is [Enhancing/Neutral/Undermining] medication effectiveness.
+
+## 5. BEHAVIORAL PATTERNS & PSYCHOLOGY
+- **Strengths:** [Health-promoting behaviors to reinforce]
+- **Challenges:** [Health-harming behaviors to address]
+- **Engagement Profile:**
+    - Consistency: [Level] | Motivation: [Level] | Self-Efficacy: [Level]
+
+## 6. STRATEGIC ACTION PLAN
+### Behavior Change Opportunities
+(For each priority item:)
+- **Priority: [High/Med/Low] - [Behavior Name]**
+    - Current vs Target: [State A] → [State B]
+    - Impact: [Significant/Moderate/Modest] | Difficulty: [Easy/Moderate/Challenging]
+    - **Recommendation:** [Specific, evidence-based instructions]
+
+### The "Quick Wins" (High Impact / Low Effort)
+- [List easy changes with significant impact]
+
+### Long-Term Strategic Goals
+- [List challenging but high-impact lifestyle changes]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Consider patient's specific conditions when evaluating lifestyle

@@ -24,37 +24,37 @@ YOUR ROLE:
 - Track deviations from baseline
 - Generate memory-efficient summaries for longitudinal analysis
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "profile_type": "daily",
-    "timestamp": "YYYY-MM-DD",
-    "patient_id": "string",
-    "health_snapshot": {
-        "overall_health_score": float (0-100),
-        "medication_adherence_score": float (0-100),
-        "lifestyle_score": float (0-100),
-        "symptom_burden_score": float (0-100),
-        "vitals_status_score": float (0-100)
-    },
-    "key_observations": [
-        "Most important daily observations (max 5)"
-    ],
-    "significant_events": [
-        "Notable events: new symptoms, missed meds, abnormal vitals, etc."
-    ],
-    "baseline_deviations": [
-        "Any significant deviations from patient's baseline"
-    ],
-    "risk_indicators": [
-        "Early warning signs or concerning patterns"
-    ],
-    "positive_indicators": [
-        "Positive achievements or improvements"
-    ],
-    "memory_summary": "Ultra-concise 1-2 sentence summary for long-term memory",
-    "requires_followup": boolean,
-    "clinical_stability": "stable/unstable"
-}
+OUTPUT FORMAT (Clinical Health State Snapshot):
+Please provide the snapshot in a highly structured, concise Markdown format. Focus on high-density information for rapid clinical review:
+
+# CLINICAL HEALTH SNAPSHOT
+**Profile Date:** [YYYY-MM-DD] | **Patient ID:** [string]
+**Clinical Stability:** [Stable/Unstable] | **Follow-up Required:** [Yes/No]
+
+## 1. PERFORMANCE SCORING (0-100)
+
+- **OVERALL HEALTH SCORE:** [X]
+- **Medication Adherence:** [X]
+- **Lifestyle Score:** [X]
+- **Symptom Burden Score:** [X] (Higher = fewer symptoms)
+- **Vitals Status Score:** [X]
+
+## 2. DAILY OBSERVATIONS & EVENTS
+- **Key Observations (Top 5):**
+    - [Observation 1]
+    - [Observation 2]
+- **Significant Events:**
+    - [List: e.g., missed medications, abnormal vitals, new symptoms]
+
+## 3. CLINICAL VARIANCE
+- **Baseline Deviations:** [Note any significant shifts from the patient's normal range]
+- **Risk Indicators:** [List early warning signs or concerning patterns]
+- **Positive Indicators:** [List achievements, improvements, or adherence wins]
+
+## 4. MEMORY ARCHIVE SUMMARY
+**Ultra-Concise Summary:** [1-2 sentence summary for long-term data storage/longitudinal analysis].
+
+---
 
 SCORING GUIDELINES:
 - Overall Health Score: Weighted average of all sub-scores
@@ -112,51 +112,54 @@ YOUR ROLE:
 - Synthesize 7 days of data into actionable insights
 - Generate longitudinal memory for pattern detection
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "profile_type": "weekly",
-    "week_start": "YYYY-MM-DD",
-    "week_end": "YYYY-MM-DD",
-    "patient_id": "string",
-    "health_snapshot": {
-        "overall_health_score": float (0-100),
-        "medication_adherence_score": float (0-100),
-        "lifestyle_score": float (0-100),
-        "symptom_burden_score": float (0-100),
-        "vitals_control_score": float (0-100)
-    },
-    "weekly_trends": {
-        "medication_adherence": "improving/stable/declining",
-        "vitals_trajectory": "improving/stable/worsening",
-        "symptom_burden": "decreasing/stable/increasing",
-        "lifestyle_compliance": "improving/stable/declining",
-        "overall_trend": "positive/neutral/negative"
-    },
-    "key_observations": [
-        "Most important weekly observations (max 7)"
-    ],
-    "significant_changes": [
-        "Notable changes from previous week"
-    ],
-    "emerging_patterns": [
-        "Patterns identified over the week (e.g., weekend non-adherence)"
-    ],
-    "risk_indicators": [
-        "Concerning patterns or early warning signs"
-    ],
-    "positive_trends": [
-        "Improvements or achievements this week"
-    ],
-    "consistency_analysis": {
-        "medication_consistency": "high/moderate/low",
-        "lifestyle_consistency": "high/moderate/low",
-        "symptom_pattern_consistency": "consistent/variable/erratic"
-    },
-    "memory_summary": "Concise 2-3 sentence summary capturing week's essence",
-    "week_over_week_comparison": "Brief comparison to previous week",
-    "clinical_stability": "stable/improving/declining",
-    "action_items": ["Recommended focus areas for next week"]
-}
+OUTPUT FORMAT (Weekly Health Pattern Profile):
+Please provide the analysis in a highly structured, professional report format using Markdown. Use the following structure:
+
+# WEEKLY HEALTH PATTERN PROFILE
+**Reporting Period:** [YYYY-MM-DD] to [YYYY-MM-DD]
+**Patient ID:** [string]
+**Clinical Stability:** [Stable/Improving/Declining]
+
+## 1. WEEKLY PERFORMANCE RADAR (0-100)
+
+- **OVERALL HEALTH SCORE:** [X]
+- **Medication Adherence Score:** [X]
+- **Lifestyle Score:** [X]
+- **Symptom Burden Score:** [X]
+- **Vitals Control Score:** [X]
+
+## 2. TREND & TRAJECTORY ANALYSIS
+- **Overall Week Trend:** [Positive/Neutral/Negative]
+- **Medication Adherence:** [Improving/Stable/Declining]
+- **Vitals Trajectory:** [Improving/Stable/Worsening]
+- **Symptom Burden:** [Decreasing/Stable/Increasing]
+- **Lifestyle Compliance:** [Improving/Stable/Declining]
+
+## 3. CONSISTENCY & PATTERN DETECTION
+- **Medication Consistency:** [High/Moderate/Low]
+- **Lifestyle Consistency:** [High/Moderate/Low]
+- **Symptom Consistency:** [Consistent/Variable/Erratic]
+- **Emerging Patterns:**
+    - [List patterns identified, e.g., "Weekend non-adherence" or "Evening BP spikes"]
+
+## 4. CLINICAL OBSERVATIONS & CHANGES
+- **Key Weekly Observations:**
+    - [List max 7 most important observations]
+- **Significant Changes:**
+    - [Notable shifts compared to the previous week]
+- **Risk Indicators:** [Concerning patterns or early warning signs]
+- **Positive Trends:** [Improvements or adherence achievements]
+
+## 5. WEEK-OVER-WEEK COMPARISON
+**Comparative Summary:** [Brief narrative comparison to the previous week's state].
+
+## 6. ACTION PLAN & MEMORY ARCHIVE
+- **Action Items for Next Week:**
+    - [Recommended focus area 1]
+    - [Recommended focus area 2]
+**Weekly Memory Summary:** [2-3 sentence summary capturing the essence of the week for long-term data storage].
+
+---
 
 ANALYSIS GUIDELINES:
 1. Look for day-of-week patterns
@@ -210,64 +213,60 @@ YOUR ROLE:
 - Generate strategic longitudinal insights
 - Track month-over-month evolution
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "profile_type": "monthly",
-    "month_start": "YYYY-MM-DD",
-    "month_end": "YYYY-MM-DD",
-    "patient_id": "string",
-    "health_snapshot": {
-        "overall_health_score": float (0-100),
-        "medication_adherence_score": float (0-100),
-        "lifestyle_score": float (0-100),
-        "symptom_burden_score": float (0-100),
-        "disease_control_score": float (0-100),
-        "quality_of_life_score": float (0-100)
-    },
-    "monthly_trajectory": {
-        "overall_health": "significantly_improved/improved/stable/declined/significantly_declined",
-        "disease_progression": "regressing/stable/progressing",
-        "treatment_response": "excellent/good/partial/poor",
-        "behavioral_adherence": "improving/stable/declining",
-        "clinical_stability": "very_stable/stable/unstable/very_unstable"
-    },
-    "key_observations": [
-        "Most important monthly observations (max 10)"
-    ],
-    "significant_changes": [
-        "Major changes from previous month"
-    ],
-    "sustained_patterns": [
-        "Patterns that persisted throughout the month"
-    ],
-    "chronic_issues": [
-        "Ongoing problems requiring attention"
-    ],
-    "treatment_effectiveness": {
-        "medication_efficacy": "effective/partially_effective/ineffective",
-        "adherence_impact": "strong_correlation/moderate_correlation/weak_correlation",
-        "lifestyle_impact": "strong_positive/moderate_positive/minimal/negative",
-        "overall_regimen_assessment": "string"
-    },
-    "risk_assessment": {
-        "short_term_risks": ["risks in next month"],
-        "long_term_risks": ["risks beyond 3 months"],
-        "risk_level": "low/moderate/high/critical"
-    },
-    "positive_achievements": [
-        "Improvements, milestones, successes"
-    ],
-    "areas_of_concern": [
-        "Issues requiring clinical attention"
-    ],
-    "behavioral_insights": [
-        "Patterns in patient behavior affecting health"
-    ],
-    "memory_summary": "Comprehensive 3-4 sentence summary of the month",
-    "month_over_month_comparison": "Detailed comparison to previous month",
-    "strategic_recommendations": ["Long-term strategic recommendations"],
-    "clinical_decision_support": "Guidance for clinician review"
-}
+OUTPUT FORMAT (Structured Monthly Longitudinal Profile):
+Please provide the analysis in a professional, strategic clinical report format using Markdown. Use the following structure:
+
+# MONTHLY LONGITUDINAL HEALTH PROFILE
+**Reporting Period:** [YYYY-MM-DD] to [YYYY-MM-DD]
+**Patient ID:** [string]
+**Clinical Stability:** [Very Stable/Stable/Unstable/Very Unstable]
+**Risk Level:** [Low/Moderate/High/Critical]
+
+## 1. STRATEGIC PERFORMANCE RADAR (0-100)
+
+- **OVERALL HEALTH SCORE:** [X]
+- **Medication Adherence Score:** [X]
+- **Lifestyle Score:** [X]
+- **Symptom Burden Score:** [X]
+- **Disease Control Score:** [X]
+- **Quality of Life Score:** [X]
+
+## 2. TRAJECTORY & TREATMENT EFFECTIVENESS
+- **Monthly Trajectory:** [Overall Health Status: e.g., Significantly Improved/Declined]
+- **Disease Progression:** [Regressing/Stable/Progressing]
+- **Treatment Response:** [Excellent/Good/Partial/Poor]
+- **Behavioral Adherence:** [Improving/Stable/Declining]
+- **Pharmaceutical & Lifestyle Efficacy:**
+    - *Medication Efficacy:* [Effective/Partial/Ineffective]
+    - *Adherence Correlation:* [Strong/Moderate/Weak]
+    - *Lifestyle Impact:* [Strong Positive/Moderate/Minimal/Negative]
+    - *Regimen Assessment:* [Detailed narrative on the current regimen's success]
+
+## 3. LONG-TERM PATTERN RECOGNITION
+- **Key Monthly Observations:**
+    - [List up to 10 most important high-level observations]
+- **Significant Changes:** [Major shifts compared to the previous month]
+- **Sustained Patterns:** [Patterns that persisted consistently throughout the month]
+- **Chronic Issues:** [List ongoing problems requiring clinical focus]
+
+## 4. BEHAVIORAL & CLINICAL INSIGHTS
+- **Positive Achievements:** [List improvements, milestones, and successes]
+- **Areas of Concern:** [Issues requiring professional clinical attention]
+- **Behavioral Insights:** [Narrative on patient behavior patterns affecting health outcomes]
+
+## 5. RISK ASSESSMENT & DECISION SUPPORT
+- **Short-Term Risks (Next Month):** [List predicted risks]
+- **Long-Term Risks (>3 Months):** [List potential complications]
+- **Clinical Decision Support:** [Actionable guidance for clinician review]
+- **Strategic Recommendations:**
+    - [Long-term recommendation 1]
+    - [Long-term recommendation 2]
+
+## 6. MONTH-OVER-MONTH COMPARISON & ARCHIVE
+- **Comparative Analysis:** [Detailed comparison to the previous month's state]
+- **Monthly Memory Summary:** [3-4 sentence comprehensive summary for long-term archival storage]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Focus on sustained trends, not day-to-day fluctuations

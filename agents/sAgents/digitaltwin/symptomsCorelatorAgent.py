@@ -28,150 +28,76 @@ YOUR ROLE:
 - Flag concerning symptom combinations
 - Provide differential diagnostic considerations
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "symptom_analysis": {
-        "active_symptoms": [
-            {
-                "symptom": "string",
-                "first_reported": "YYYY-MM-DD",
-                "duration_days": integer,
-                "frequency": "constant/daily/several_times_week/intermittent",
-                "severity_trend": "worsening/stable/improving/resolved",
-                "current_severity": "mild/moderate/severe",
-                "related_conditions": ["conditions that may cause this symptom"],
-                "clinical_significance": "critical/high/moderate/low",
-                "requires_urgent_evaluation": boolean
-            }
-        ],
-        "symptom_clusters": [
-            {
-                "cluster_id": "string",
-                "symptoms": ["symptom1", "symptom2", "symptom3"],
-                "co_occurrence_pattern": "always_together/frequently_together/occasionally_together",
-                "potential_causes": ["possible underlying causes"],
-                "clinical_syndrome": "string (if recognizable pattern)",
-                "clinical_significance": "critical/high/moderate/low"
-            }
-        ],
-        "symptom_burden_score": float (0-100),
-        "symptom_burden_trend": "increasing/stable/decreasing"
-    },
-    "correlations": {
-        "medication_correlations": [
-            {
-                "symptom": "string",
-                "medication": "string",
-                "correlation_type": "known_side_effect/possible_side_effect/withdrawal/therapeutic_effect",
-                "correlation_strength": "strong/moderate/weak",
-                "temporal_relationship": "string",
-                "action_required": "immediate_review/monitor/none"
-            }
-        ],
-        "dietary_correlations": [
-            {
-                "symptom": "string",
-                "dietary_factor": "string (e.g., high sodium, sugar, specific food)",
-                "correlation_pattern": "string",
-                "correlation_strength": "strong/moderate/weak"
-            }
-        ],
-        "activity_correlations": [
-            {
-                "symptom": "string",
-                "activity": "exercise/rest/specific_activity",
-                "relationship": "triggered_by/relieved_by/worsened_by/unrelated",
-                "pattern": "string"
-            }
-        ],
-        "temporal_patterns": [
-            {
-                "symptom": "string",
-                "temporal_pattern": "morning/evening/night/after_meals/before_meals/time_specific",
-                "consistency": "very_consistent/somewhat_consistent/inconsistent",
-                "potential_significance": "string"
-            }
-        ],
-        "condition_related_symptoms": [
-            {
-                "symptom": "string",
-                "related_condition": "string",
-                "relationship": "typical_symptom/atypical_symptom/complication/exacerbation_sign",
-                "clinical_implication": "string"
-            }
-        ]
-    },
-    "new_concerns": [
-        {
-            "symptom": "string",
-            "first_appearance": "YYYY-MM-DD",
-            "severity": "mild/moderate/severe",
-            "concern_level": "critical/high/moderate/low",
-            "possible_causes": ["list"],
-            "red_flags": ["concerning features"],
-            "evaluation_urgency": "immediate/urgent/routine"
-        }
-    ],
-    "worsening_symptoms": [
-        {
-            "symptom": "string",
-            "baseline_severity": "string",
-            "current_severity": "string",
-            "rate_of_worsening": "rapid/gradual/slow",
-            "possible_causes": ["disease progression", "medication issue", "lifestyle factor"],
-            "action_required": "string"
-        }
-    ],
-    "resolved_symptoms": [
-        {
-            "symptom": "string",
-            "resolution_date": "YYYY-MM-DD",
-            "duration_before_resolution": "string",
-            "likely_cause_of_resolution": "medication_adjustment/lifestyle_change/natural_resolution"
-        }
-    ],
-    "symptom_triggers": [
-        {
-            "trigger": "string",
-            "associated_symptoms": ["list"],
-            "trigger_consistency": "always/usually/sometimes/rarely",
-            "avoidable": boolean
-        }
-    ],
-    "red_flag_symptoms": [
-        {
-            "symptom": "string",
-            "red_flag_reason": "string",
-            "associated_risks": ["list"],
-            "urgency": "emergency/urgent/prompt"
-        }
-    ],
-    "symptom_impact": {
-        "impact_on_daily_activities": "severe/moderate/mild/minimal",
-        "impact_on_quality_of_life": "severe/moderate/mild/minimal",
-        "functional_impairment": "severe/moderate/mild/none",
-        "symptoms_limiting_activities": ["list"]
-    },
-    "differential_considerations": [
-        {
-            "symptom_complex": ["symptoms"],
-            "possible_diagnosis": "string",
-            "likelihood": "high/moderate/low",
-            "supporting_evidence": ["list"],
-            "recommended_workup": ["tests or evaluations needed"]
-        }
-    ],
-    "escalation_required": boolean,
-    "escalation_reason": "string",
-    "clinical_interpretation": "Comprehensive narrative interpretation of symptom patterns and clinical significance",
-    "recommendations": [
-        {
-            "priority": "immediate/high/medium/low",
-            "recommendation": "string",
-            "rationale": "string"
-        }
-    ]
-}
+OUTPUT FORMAT (Symptom Pattern & Correlation Report):
+Please provide the analysis in a professional, structured clinical report using Markdown. Use the following hierarchy:
+
+# SYMPTOM PATTERN & CORRELATION REPORT
+**Symptom Burden Score:** [0-100] | **Trend:** [Increasing/Stable/Decreasing]
+**Escalation Required:** [YES/NO] | **Reason:** [Brief explanation if yes]
+
+## 1. CLINICAL INTERPRETATION
+[Provide a comprehensive narrative interpretation of the current symptom patterns and their clinical significance here.]
+
+## 2. ACTIVE SYMPTOM ANALYSIS
+(For each active symptom:)
+### [SYMPTOM NAME]
+- **Status:** [Current Severity] ([Severity Trend]) | **Clinical Significance:** [Critical/High/Moderate/Low]
+- **Duration:** Reported since [Date] ([X] days) | **Frequency:** [Constant/Daily/Intermittent/etc.]
+- **Requires Urgent Evaluation:** [Yes/No]
+- **Related Conditions:** [List potential underlying conditions]
+
+## 3. SYMPTOM CLUSTERS & SYNDROMES
+- **Cluster ID: [Name/ID]**
+    - **Symptoms:** [List symptoms involved]
+    - **Pattern:** [Always/Frequently/Occasionally together]
+    - **Clinical Syndrome:** [Recognizable pattern name, if applicable]
+    - **Potential Causes:** [List possible underlying causes]
+    - **Significance:** [Level]
+
+## 4. MULTI-FACTOR CORRELATIONS
+### Medication & Side Effects
+- **[Symptom] ↔ [Medication]:** [Correlation Type: e.g., side effect, withdrawal]
+    - *Strength:* [Strong/Moderate/Weak] | *Temporal Relation:* [Description]
+    - *Action:* [Immediate review/Monitor/None]
+
+### Lifestyle & Environment
+- **Dietary:** [Symptom] correlated with [Dietary Factor] ([Strength]) - [Pattern description]
+- **Activity:** [Symptom] is [Triggered/Relieved/Worsened] by [Activity]
+- **Temporal/Circadian:** [Symptom] occurs consistently in the [Morning/Night/After meals/etc.]
+
+### Condition-Specific Symptoms
+- **[Symptom] ↔ [Condition]:** [Typical symptom/Atypical/Complication/Exacerbation sign]
+    - *Implication:* [What this means for disease management]
+
+## 5. EMERGING CONCERNS & RED FLAGS
+### *** RED FLAG WARNINGS ***
+- **[Symptom Name]:** [Reason for red flag] | **Associated Risks:** [List]
+- **Urgency:** [Emergency/Urgent/Prompt]
+
+### New & Worsening Symptoms
+- **New Onset:** [Symptom] (Appeared: [Date]) | Severity: [Level] | Concern: [Level]
+- **Worsening:** [Symptom] ([Baseline] → [Current]) | Rate: [Rapid/Gradual/Slow] | Possible Cause: [X]
+
+### Resolved Symptoms
+- **[Symptom Name]:** Resolved on [Date] after [Duration]. Likely due to [Reason].
+
+## 6. IMPACT ON QUALITY OF LIFE (QoL)
+- **Daily Activities:** [Severe/Moderate/Mild/Minimal Impact]
+- **Functional Impairment:** [Description of what the patient can no longer do]
+- **Symptom Triggers:** [Trigger Name] ([Consistency]%) | Avoidable: [Yes/No]
+
+## 7. DIFFERENTIAL CONSIDERATIONS
+- **Symptom Complex:** [List symptoms]
+- **Possible Diagnosis:** [Name] | **Likelihood:** [High/Moderate/Low]
+- **Supporting Evidence:** [List points from data]
+- **Recommended Workup:** [Tests or evaluations needed for confirmation]
+
+## 8. STRATEGIC RECOMMENDATIONS
+(List by priority:)
+- **Priority: [Immediate/High/Med/Low] - [Recommendation]**
+    - *Rationale:* [Why this step is necessary]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Look for symptom patterns across all time scales

@@ -39,6 +39,7 @@ def ehr_summary_to_report(id: str) -> str:
         for the patient {full_name}.
 
         Provide a concise summary including:
+        - demographics
         - Medical history
         - Existing conditions
         - Medications

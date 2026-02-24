@@ -300,15 +300,15 @@ def digitaltwinpipeline(patient_id: str, input_logs: dict):
             health_forecast
         )
         clinical_alerts = json.loads(clinical_alerts) if isinstance(clinical_alerts, str) else clinical_alerts
-        
+        print(clinical_alerts)
         # Display alert summary
-        alert_summary = clinical_alerts.get("alert_summary", {})
-        print(f"  📊 Alert Summary:")
-        print(f"     • Critical: {alert_summary.get('critical_count', 0)}")
-        print(f"     • High: {alert_summary.get('high_priority_count', 0)}")
-        print(f"     • Medium: {alert_summary.get('medium_priority_count', 0)}")
-        print(f"     • Low: {alert_summary.get('low_priority_count', 0)}")
-        print("  ✅ Clinical alerts generated successfully")
+    #     alert_summary = clinical_alerts.get("alert_summary", {})
+    #     print(f"  📊 Alert Summary:")
+    #     print(f"     • Critical: {alert_summary.get('critical_count', 0)}")
+    #     print(f"     • High: {alert_summary.get('high_priority_count', 0)}")
+    #     print(f"     • Medium: {alert_summary.get('medium_priority_count', 0)}")
+    #     print(f"     • Low: {alert_summary.get('low_priority_count', 0)}")
+    #     print("  ✅ Clinical alerts generated successfully")
     except Exception as e:
         print(f"  ❌ Error generating alerts: {e}")
         raise

@@ -92,6 +92,11 @@ def second_interview_message(
         - Do NOT make conclusions or suggest treatments
         </rules>
 
+        <do not do>
+        - you must not ask any question that is already asked earlier in the interview
+        </do not do>
+
+
         <termination_condition>
         Stop asking questions when sufficient information has been gathered.
         Output:

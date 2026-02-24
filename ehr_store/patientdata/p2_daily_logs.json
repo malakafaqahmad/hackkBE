@@ -1,60 +1,423 @@
 [
   {
-    "date": "2026-02-22",
-    "medications_taken": [],
+    "date": "2026-03-10",
+    "medications_taken": [
+      {
+        "medication_name": "Clopidogrel 75mg",
+        "prescribed_time": "08:00",
+        "actual_time": null,
+        "taken": false
+      },
+      {
+        "medication_name": "Atorvastatin 40mg",
+        "prescribed_time": "21:00",
+        "actual_time": "23:45",
+        "taken": true
+      }
+    ],
     "vitals": {
-      "blood_pressure_systolic": 120,
-      "blood_pressure_diastolic": 80,
-      "heart_rate": 72,
-      "temperature_f": 98.6,
-      "blood_glucose_mg_dl": 100,
-      "weight_lbs": 170,
-      "oxygen_saturation_percent": 98
+      "blood_pressure_systolic": 162,
+      "blood_pressure_diastolic": 102,
+      "heart_rate": 96,
+      "temperature_f": 98.8,
+      "blood_glucose_mg_dl": 125,
+      "weight_lbs": 180,
+      "oxygen_saturation_percent": 95
     },
-    "symptoms": [],
+    "symptoms": [
+      {
+        "symptom": "Chest pain at rest",
+        "severity": "moderate",
+        "time_reported": "14:20"
+      },
+      {
+        "symptom": "Shortness of breath",
+        "severity": "moderate",
+        "time_reported": "14:25"
+      }
+    ],
     "exercise": {
       "exercise_minutes": 0,
       "type": "none",
       "intensity": "none"
     },
     "nutrition": {
-      "meals": []
+      "meals": [
+        {
+          "meal_time": "morning",
+          "items": [
+            {
+              "food_name": "Fried eggs",
+              "portion_size_g": 150
+            },
+            {
+              "food_name": "White bread",
+              "portion_size_g": 120
+            }
+          ]
+        },
+        {
+          "meal_time": "afternoon",
+          "items": [
+            {
+              "food_name": "Fast food burger",
+              "portion_size_g": 250
+            }
+          ]
+        },
+        {
+          "meal_time": "night",
+          "items": [
+            {
+              "food_name": "Salted chips",
+              "portion_size_g": 150
+            }
+          ]
+        }
+      ]
     },
     "labs": [],
-    "notes": "",
+    "notes": "Missed morning medication. Felt chest discomfort even without exertion.",
     "nutrition_enriched": {
-      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 589bd608-fee9-4a9a-959e-1f795365b837\n    "
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":1.2,\"carbs\":60,\"salt\":1.0,\"sugar\":6},\"lunch\":{\"sodium\":2.5,\"carbs\":45,\"salt\":2.2,\"sugar\":9},\"dinner\":{\"sodium\":1.8,\"carbs\":30,\"salt\":1.6,\"sugar\":4}},\"nutritional_summary\":\"High sodium intake (>5g). Significant cardiac risk today.\"}\n```"
     }
   },
   {
-    "date": "2026-02-23",
-    "medications_taken": [],
+    "date": "2026-03-11",
+    "medications_taken": [
+      {
+        "medication_name": "Clopidogrel 75mg",
+        "prescribed_time": "08:00",
+        "actual_time": "10:30",
+        "taken": true
+      },
+      {
+        "medication_name": "Atorvastatin 40mg",
+        "prescribed_time": "21:00",
+        "actual_time": null,
+        "taken": false
+      }
+    ],
     "vitals": {
-      "blood_pressure_systolic": 120,
-      "blood_pressure_diastolic": 80,
-      "heart_rate": 72,
-      "temperature_f": 98.6,
-      "blood_glucose_mg_dl": 100,
-      "weight_lbs": 170,
-      "oxygen_saturation_percent": 98
+      "blood_pressure_systolic": 170,
+      "blood_pressure_diastolic": 108,
+      "heart_rate": 102,
+      "temperature_f": 99.1,
+      "blood_glucose_mg_dl": 132,
+      "weight_lbs": 182,
+      "oxygen_saturation_percent": 94
     },
-    "symptoms": [],
+    "symptoms": [
+      {
+        "symptom": "Severe chest pressure",
+        "severity": "severe",
+        "time_reported": "09:15"
+      },
+      {
+        "symptom": "Dizziness",
+        "severity": "moderate",
+        "time_reported": "09:20"
+      }
+    ],
     "exercise": {
       "exercise_minutes": 0,
       "type": "none",
       "intensity": "none"
     },
     "nutrition": {
-      "meals": []
+      "meals": [
+        {
+          "meal_time": "morning",
+          "items": [
+            {
+              "food_name": "Sugary cereal",
+              "portion_size_g": 120
+            }
+          ]
+        },
+        {
+          "meal_time": "afternoon",
+          "items": [
+            {
+              "food_name": "Fried chicken",
+              "portion_size_g": 300
+            }
+          ]
+        },
+        {
+          "meal_time": "night",
+          "items": [
+            {
+              "food_name": "Processed noodles",
+              "portion_size_g": 200
+            }
+          ]
+        }
+      ]
     },
-    "labs": [],
-    "notes": "",
+    "labs": [
+      {
+        "test_name": "High-Sensitivity Troponin I",
+        "value": "0.42",
+        "unit": "ng/mL"
+      }
+    ],
+    "notes": "Chest pain more intense today. Troponin elevated significantly.",
     "nutrition_enriched": {
-      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd 5cd90d2a-218c-48cd-a3eb-452940f98a30\n    "
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0.9,\"carbs\":70,\"salt\":0.8,\"sugar\":25},\"lunch\":{\"sodium\":3.0,\"carbs\":20,\"salt\":2.7,\"sugar\":5},\"dinner\":{\"sodium\":2.2,\"carbs\":60,\"salt\":2.0,\"sugar\":6}},\"nutritional_summary\":\"Extremely high sodium and sugar intake. High acute cardiovascular stress.\"}\n```"
     }
   },
   {
-    "date": "2026-02-23",
+    "date": "2026-03-12",
+    "medications_taken": [
+      {
+        "medication_name": "Clopidogrel 75mg",
+        "prescribed_time": "08:00",
+        "actual_time": null,
+        "taken": false
+      },
+      {
+        "medication_name": "Atorvastatin 40mg",
+        "prescribed_time": "21:00",
+        "actual_time": null,
+        "taken": false
+      }
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 175,
+      "blood_pressure_diastolic": 110,
+      "heart_rate": 108,
+      "temperature_f": 99.3,
+      "blood_glucose_mg_dl": 140,
+      "weight_lbs": 185,
+      "oxygen_saturation_percent": 93
+    },
+    "symptoms": [
+      {
+        "symptom": "Persistent chest pain",
+        "severity": "severe",
+        "time_reported": "11:00"
+      },
+      {
+        "symptom": "Severe shortness of breath",
+        "severity": "severe",
+        "time_reported": "11:05"
+      }
+    ],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [
+      {
+        "test_name": "High-Sensitivity Troponin I",
+        "value": "0.65",
+        "unit": "ng/mL"
+      }
+    ],
+    "notes": "Condition worsening. Severe symptoms today.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":0,\"carbs\":0,\"salt\":0,\"sugar\":0},\"lunch\":{\"sodium\":0,\"carbs\":0,\"salt\":0,\"sugar\":0},\"dinner\":{\"sodium\":0,\"carbs\":0,\"salt\":0,\"sugar\":0}},\"nutritional_summary\":\"Poor intake. Likely stress response and acute cardiac deterioration.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-13",
+    "medications_taken": [
+      {
+        "medication_name": "Clopidogrel 75mg",
+        "prescribed_time": "08:00",
+        "actual_time": "08:15",
+        "taken": true
+      },
+      {
+        "medication_name": "Atorvastatin 40mg",
+        "prescribed_time": "21:00",
+        "actual_time": "21:10",
+        "taken": true
+      }
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 168,
+      "blood_pressure_diastolic": 105,
+      "heart_rate": 100,
+      "temperature_f": 99.0,
+      "blood_glucose_mg_dl": 135,
+      "weight_lbs": 186,
+      "oxygen_saturation_percent": 94
+    },
+    "symptoms": [
+      {
+        "symptom": "Chest discomfort on minimal exertion",
+        "severity": "moderate",
+        "time_reported": "12:00"
+      }
+    ],
+    "exercise": {
+      "exercise_minutes": 5,
+      "type": "walking",
+      "intensity": "light"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "Slight improvement after resuming medications, but still unstable.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":1.0,\"carbs\":40,\"salt\":0.8,\"sugar\":6},\"lunch\":{\"sodium\":2.0,\"carbs\":50,\"salt\":1.8,\"sugar\":10},\"dinner\":{\"sodium\":1.5,\"carbs\":35,\"salt\":1.3,\"sugar\":5}},\"nutritional_summary\":\"Continued high sodium intake delaying recovery.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-14",
+    "medications_taken": [
+      {
+        "medication_name": "Clopidogrel 75mg",
+        "prescribed_time": "08:00",
+        "actual_time": "08:00",
+        "taken": true
+      },
+      {
+        "medication_name": "Atorvastatin 40mg",
+        "prescribed_time": "21:00",
+        "actual_time": "21:00",
+        "taken": true
+      }
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 160,
+      "blood_pressure_diastolic": 100,
+      "heart_rate": 92,
+      "temperature_f": 98.9,
+      "blood_glucose_mg_dl": 130,
+      "weight_lbs": 186,
+      "oxygen_saturation_percent": 95
+    },
+    "symptoms": [
+      {
+        "symptom": "Fatigue",
+        "severity": "moderate",
+        "time_reported": "15:00"
+      }
+    ],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "Still hypertensive. Limited physical activity.",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":1.1,\"carbs\":35,\"salt\":0.9,\"sugar\":4},\"lunch\":{\"sodium\":2.1,\"carbs\":55,\"salt\":1.9,\"sugar\":8},\"dinner\":{\"sodium\":1.7,\"carbs\":40,\"salt\":1.5,\"sugar\":6}},\"nutritional_summary\":\"Excess sodium continues.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-03-15",
+    "medications_taken": [
+      {
+        "medication_name": "Clopidogrel 75mg",
+        "prescribed_time": "08:00",
+        "actual_time": "08:00",
+        "taken": true
+      },
+      {
+        "medication_name": "Atorvastatin 40mg",
+        "prescribed_time": "21:00",
+        "actual_time": "21:00",
+        "taken": true
+      }
+    ],
+    "vitals": {
+      "blood_pressure_systolic": 155,
+      "blood_pressure_diastolic": 98,
+      "heart_rate": 90,
+      "temperature_f": 98.7,
+      "blood_glucose_mg_dl": 128,
+      "weight_lbs": 187,
+      "oxygen_saturation_percent": 95
+    },
+    "symptoms": [
+      {
+        "symptom": "Mild chest pain",
+        "severity": "moderate",
+        "time_reported": "17:00"
+      }
+    ],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "Slight improvement but BP still poorly controlled. Weight trending upward (possible fluid retention).",
+    "nutrition_enriched": {
+      "response": "```json\n{\"analysis_meta\":{\"status\":\"complete\",\"unit\":\"grams\"},\"diet\":{\"morning\":{\"sodium\":1.0,\"carbs\":30,\"salt\":0.8,\"sugar\":3},\"lunch\":{\"sodium\":2.0,\"carbs\":45,\"salt\":1.7,\"sugar\":7},\"dinner\":{\"sodium\":1.5,\"carbs\":35,\"salt\":1.3,\"sugar\":4}},\"nutritional_summary\":\"Chronic high sodium likely contributing to hypertension and fluid retention.\"}\n```"
+    }
+  },
+  {
+    "date": "2026-02-24",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 140,
+      "blood_pressure_diastolic": 110,
+      "heart_rate": 72,
+      "temperature_f": 100,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "```json\n{\n    \"analysis_meta\": {\n        \"status\": \"complete\",\n        \"unit\": \"grams\"\n    },\n    \"diet\": {\n        \"morning\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"lunch\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"dinner\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        }\n    },\n    \"nutritional_summary\": \"No food intake data provided.  Please provide details about the meals consumed.\"\n}\n```"
+    }
+  },
+  {
+    "date": "2026-02-24",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 138,
+      "blood_pressure_diastolic": 97,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "```json\n{\n    \"analysis_meta\": {\n        \"status\": \"complete\",\n        \"unit\": \"grams\"\n    },\n    \"diet\": {\n        \"morning\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"lunch\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"dinner\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        }\n    },\n    \"nutritional_summary\": \"No food intake data provided.  Please provide details about the meals consumed.\"\n}\n```"
+    }
+  },
+  {
+    "date": "2026-02-24",
     "medications_taken": [],
     "vitals": {
       "blood_pressure_systolic": 120,
@@ -77,7 +440,88 @@
     "labs": [],
     "notes": "",
     "nutrition_enriched": {
-      "response": "\n    response from /respond endpoint ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    ddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd \n    dddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\n    dddddddddddddddddddddddddddddddddddd a11cd161-f515-4bf3-bdac-bf2c6a51cc78\n    "
+      "response": "```json\n{\n    \"analysis_meta\": {\n        \"status\": \"complete\",\n        \"unit\": \"grams\"\n    },\n    \"diet\": {\n        \"morning\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"lunch\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"dinner\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        }\n    },\n    \"nutritional_summary\": \"No food intake data provided.  Please provide details about the meals consumed.\"\n}\n```"
+    }
+  },
+  {
+    "date": "2026-02-24",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "```json\n{\n    \"analysis_meta\": {\n        \"status\": \"complete\",\n        \"unit\": \"grams\"\n    },\n    \"diet\": {\n        \"morning\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"lunch\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"dinner\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        }\n    },\n    \"nutritional_summary\": \"No food intake data provided.  Please provide details about the meals consumed.\"\n}\n```"
+    }
+  },
+  {
+    "date": "2026-02-24",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "```json\n{\n    \"analysis_meta\": {\n        \"status\": \"complete\",\n        \"unit\": \"grams\"\n    },\n    \"diet\": {\n        \"morning\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"lunch\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"dinner\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        }\n    },\n    \"nutritional_summary\": \"No food intake data provided.  Please provide details about the meals consumed.\"\n}\n```"
+    }
+  },
+  {
+    "date": "2026-02-24",
+    "medications_taken": [],
+    "vitals": {
+      "blood_pressure_systolic": 120,
+      "blood_pressure_diastolic": 80,
+      "heart_rate": 72,
+      "temperature_f": 98.6,
+      "blood_glucose_mg_dl": 100,
+      "weight_lbs": 170,
+      "oxygen_saturation_percent": 98
+    },
+    "symptoms": [],
+    "exercise": {
+      "exercise_minutes": 0,
+      "type": "none",
+      "intensity": "none"
+    },
+    "nutrition": {
+      "meals": []
+    },
+    "labs": [],
+    "notes": "",
+    "nutrition_enriched": {
+      "response": "```json\n{\n    \"analysis_meta\": {\n        \"status\": \"complete\",\n        \"unit\": \"grams\"\n    },\n    \"diet\": {\n        \"morning\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"lunch\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        },\n        \"dinner\": {\n            \"sodium\": 0.0,\n            \"carbs\": 0.0,\n            \"salt\": 0.0,\n            \"sugar\": 0.0\n        }\n    },\n    \"nutritional_summary\": \"No food intake data provided.  Please provide details about the meals consumed.\"\n}\n```"
     }
   }
 ]

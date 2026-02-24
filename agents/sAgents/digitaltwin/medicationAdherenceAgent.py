@@ -25,88 +25,71 @@ YOUR ROLE:
 - Detect timing and consistency patterns
 - Provide actionable recommendations to improve adherence
 
-OUTPUT FORMAT (Valid JSON only):
-{
-    "adherence_analysis": {
-        "overall_adherence_rate": float (0-100),
-        "adherence_by_medication": [
-            {
-                "medication_name": "string",
-                "prescribed_frequency": "string",
-                "adherence_rate": float (0-100),
-                "missed_doses": integer,
-                "timing_consistency": "excellent/good/fair/poor",
-                "average_delay_minutes": float,
-                "clinical_significance_of_misses": "critical/high/moderate/low"
-            }
-        ],
-        "adherence_trend": "improving/stable/declining",
-        "risk_level": "low/medium/high/critical"
-    },
-    "patterns_identified": {
-        "time_of_day_patterns": [
-            {
-                "time": "morning/afternoon/evening/night",
-                "adherence_rate": float,
-                "most_missed_time": boolean
-            }
-        ],
-        "day_of_week_patterns": {
-            "weekday_adherence": float,
-            "weekend_adherence": float,
-            "most_missed_day": "string",
-            "pattern_description": "string"
-        },
-        "medication_complexity_impact": "high_burden/moderate_burden/low_burden",
-        "polypharmacy_confusion": boolean,
-        "common_miss_scenarios": ["scenarios when doses are missed"]
-    },
-    "barrier_analysis": {
-        "identified_barriers": [
-            {
-                "barrier_type": "forgetfulness/side_effects/complexity/cost/belief/other",
-                "severity": "high/medium/low",
-                "evidence": "string",
-                "affected_medications": ["list"]
-            }
-        ],
-        "primary_barrier": "string",
-        "modifiable_barriers": ["barriers that can be addressed"]
-    },
-    "clinical_impact": {
-        "therapeutic_effectiveness_concern": boolean,
-        "therapeutic_effectiveness_explanation": "string",
-        "health_outcome_risk": "critical/high/moderate/low",
-        "specific_risks": ["risks from non-adherence"],
-        "therapeutic_target_achievement": "on_track/at_risk/off_track",
-        "disease_control_impact": "minimal/moderate/significant/severe"
-    },
-    "medication_specific_concerns": [
-        {
-            "medication": "string",
-            "concern": "string",
-            "recommendation": "string"
-        }
-    ],
-    "timing_analysis": {
-        "medications_taken_on_time_percent": float,
-        "average_timing_deviation_minutes": float,
-        "timing_critical_medications": ["meds where timing matters most"],
-        "timing_impact_on_efficacy": "minimal/moderate/significant"
-    },
-    "recommendations": [
-        {
-            "priority": "high/medium/low",
-            "recommendation": "string",
-            "expected_impact": "string",
-            "implementation_strategy": "string"
-        }
-    ],
-    "adherence_score": float (0-100),
-    "intervention_urgency": "immediate/prompt/routine",
-    "follow_up_needed": boolean,
-    "summary": "Concise summary of adherence status and key actions"
-}
+OUTPUT FORMAT (Structured Medication Adherence Report):
+Please provide the analysis in a clear, professional report format using Markdown. Use the following structure:
+
+# MEDICATION ADHERENCE & PHARMACEUTICAL ANALYSIS
+**Overall Adherence Score:** [0-100]
+**Risk Level:** [Low/Medium/High/Critical]
+**Intervention Urgency:** [Immediate/Prompt/Routine]
+**Follow-up Needed:** [Yes/No]
+
+## 1. EXECUTIVE SUMMARY
+[Provide a concise narrative summary of adherence status and key required actions.]
+
+## 2. ADHERENCE RATE ANALYSIS
+- **Overall Rate:** [X]% | **Trend:** [Improving/Stable/Declining]
+- **Medication-Specific Breakdown:**
+    (For each medication:)
+    - **[Medication Name]:** [X]% Adherence
+        - *Frequency:* [Prescribed Frequency]
+        - *Missed Doses:* [X] | *Timing Consistency:* [Excellent/Good/Fair/Poor]
+        - *Avg. Delay:* [X] minutes
+        - *Clinical Significance of Misses:* [Critical/High/Moderate/Low]
+
+## 3. BEHAVIORAL PATTERN RECOGNITION
+### Time & Day Patterns
+- **Time of Day:** [Morning: X% | Afternoon: X% | Evening: X% | Night: X%]
+    - *Most Missed Time:* [Time Period]
+- **Weekly Patterns:** [Weekday Rate: X% | Weekend Rate: X%]
+    - *Most Missed Day:* [Day]
+    - *Pattern Description:* [Description of specific routine failures]
+
+### Complexity & Polypharmacy
+- **Medication Burden:** [High/Moderate/Low]
+- **Polypharmacy Confusion Identified:** [Yes/No]
+- **Common Miss Scenarios:** [List scenarios when doses are typically missed]
+
+## 4. BARRIER ANALYSIS
+- **Primary Barrier:** [Name]
+- **Identified Barriers:**
+    - [Type: e.g., Forgetfulness] (Severity: [H/M/L])
+    - *Evidence:* [Supporting details from logs]
+    - *Affected Meds:* [List]
+- **Modifiable Barriers:** [List barriers that can be addressed through intervention]
+
+## 5. CLINICAL IMPACT & HEALTH RISKS
+- **Therapeutic Effectiveness Concern:** [Yes/No]
+- **Impact Explanation:** [Detailed narrative on how non-adherence affects therapy]
+- **Outcome Risk:** [Critical/High/Moderate/Low]
+- **Therapeutic Target Achievement:** [On Track/At Risk/Off Track]
+- **Disease Control Impact:** [Minimal/Moderate/Significant/Severe]
+- **Specific Health Risks:** [List risks resulting from non-adherence]
+
+## 6. TIMING & EFFICACY ANALYSIS
+- **On-Time Delivery:** [X]% of doses
+- **Avg. Timing Deviation:** [X] minutes
+- **Timing-Critical Medications:** [List meds where timing matters most]
+- **Efficacy Impact:** [Minimal/Moderate/Significant]
+
+## 7. PHARMACEUTICAL RECOMMENDATIONS
+(List by priority:)
+### Priority: [High/Medium/Low] - [Recommendation Name]
+- **Action:** [Detailed instruction]
+- **Expected Impact:** [Description]
+- **Implementation Strategy:** [How the patient or clinician should proceed]
+
+---
 
 ANALYSIS GUIDELINES:
 1. Consider medication criticality (cardiac meds > vitamins)

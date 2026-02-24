@@ -284,6 +284,7 @@ def generate_diet_plan():
         # Validate required fields
         patient_id = data.get('patient_id')
         current_report = data.get('current_report')
+        print("the current reprot is ", current_report)
         
         if not patient_id:
             return jsonify({

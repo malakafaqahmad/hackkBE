@@ -367,7 +367,7 @@ class UnifiedChatOrchestrator:
         
         # Check if phase 3 is complete (10 user messages in second interview)
         session = self.session_manager.get_session(conversation_id)
-        if session['message_counts']['second_interview'] >= 10:
+        if session['message_counts']['second_interview'] >= 5:
             return self._generate_final_report(session, conversation_id)
         
         return agent_response, "question", False

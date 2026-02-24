@@ -11,5 +11,29 @@
   "notes": "Patient is stable, BP controlled with medication.",
   "created_at": "2026-01-28T10:15:00Z",
   "updated_at": "2026-01-28T10:15:00Z"
-  }
+  },
+  {
+  "id": "enc-001",
+  "patient_id": "p2",
+  "doctor_id": "d1",
+  "encounter_type": "Cardiology Follow-up Consultation",
+  "encounter_date": "2026-02-24T10:00:00Z",
+  "reason_for_visit": "Chest pain, shortness of breath on exertion, and routine follow-up for coronary artery disease",
+  "diagnosis": [
+    "Coronary Artery Disease (CAD)",
+    "Stable Angina",
+    "Hypertension",
+    "Hyperlipidemia"
+  ],
+  "procedures": [
+    "Blood pressure measurement",
+    "12-lead ECG",
+    "Echocardiogram",
+    "Cardiac enzyme panel",
+    "Lipid profile test"
+  ],
+  "notes": "Patient afaq2 reports intermittent chest tightness during exertion lasting 5-10 minutes, relieved by rest. BP mildly elevated at 148/92 mmHg. ECG shows ST-segment depression in leads V4-V6. Echocardiogram reveals mild left ventricular hypertrophy with ejection fraction of 50%. Medications adjusted; beta-blocker dose increased. Advised lifestyle modification including low-sodium diet and cardiac rehabilitation.",
+  "created_at": "2026-02-24T10:20:00Z",
+  "updated_at": "2026-02-24T10:20:00Z"
+}
 ]
